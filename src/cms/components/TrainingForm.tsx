@@ -10,10 +10,12 @@ interface TrainingFormProps {
 
 export default function TrainingForm({ training, onSubmit, onCancel }: TrainingFormProps) {
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
     reset,
   } = useForm({
     defaultValues: training ? {
@@ -33,17 +35,33 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
     } : {},
   });
 
+  const startDate = watch('startDate');
+  const endDate = watch('endDate');
+
   const onFormSubmit = async (data: any) => {
     setLoading(true);
+    setSubmitError(null);
+    
+    // Validasi tanggal
+    const start = new Date(data.startDate);
+    const end = new Date(data.endDate);
+    
+    if (end <= start) {
+      setSubmitError('Tanggal selesai harus setelah tanggal mulai');
+      setLoading(false);
+      return;
+    }
+
     try {
       await onSubmit({
         ...data,
         price: Number(data.price) || 0,
-        maxParticipants: Number(data.maxParticipants),
+        maxParticipants: Number(data.maxParticipants) || null,
         currentParticipants: training?.currentParticipants || 0,
       });
     } catch (error) {
       console.error('Error submitting form:', error);
+      setSubmitError('Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
     } finally {
       setLoading(false);
     }
@@ -51,9 +69,22 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
-      <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-        {training ? 'Edit Pelatihan' : 'Tambah Pelatihan Baru'}
-      </h2>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          {training ? 'Edit Pelatihan' : 'Tambah Pelatihan Baru'}
+        </h2>
+        {training && (
+          <span className="text-sm text-gray-500">
+            ID: {training.id}
+          </span>
+        )}
+      </div>
+
+      {submitError && (
+        <div className="mb-6 bg-red-50 border border-red-200 rounded-md p-4">
+          <p className="text-red-600 text-sm font-medium">{submitError}</p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,6 +114,9 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
               placeholder="Deskripsi singkat untuk preview"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              💡 Ringkasan singkat yang muncul di kartu pelatihan (opsional)
+            </p>
           </div>
 
           {/* Description */}
@@ -94,11 +128,14 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
               rows={6}
               {...register('description', { required: 'Deskripsi wajib diisi' })}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-              placeholder="Deskripsi lengkap pelatihan..."
+              placeholder="Jelaskan detail pelatihan, materi yang akan dipelajari, dan manfaatnya..."
             />
             {errors.description && (
               <p className="text-red-600 text-sm mt-1">{errors.description.message}</p>
             )}
+            <p className="text-xs text-gray-500 mt-1">
+              💡 Jelaskan secara detail tentang pelatihan ini
+            </p>
           </div>
 
           {/* Start Date */}
@@ -114,6 +151,9 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
             {errors.startDate && (
               <p className="text-red-600 text-sm mt-1">{errors.startDate.message}</p>
             )}
+            <p className="text-xs text-gray-500 mt-1">
+              📅 Kapan pelatihan dimulai
+            </p>
           </div>
 
           {/* End Date */}
@@ -129,6 +169,9 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
             {errors.endDate && (
               <p className="text-red-600 text-sm mt-1">{errors.endDate.message}</p>
             )}
+            <p className="text-xs text-gray-500 mt-1">
+              📅 Kapan pelatihan selesai
+            </p>
           </div>
 
           {/* Location */}
@@ -170,10 +213,14 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
             </label>
             <input
               type="number"
+              min="0"
               {...register('price')}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-              placeholder="0 untuk gratis"
+              placeholder="0"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              💰 Ketik 0 atau kosongkan untuk pelatihan gratis
+            </p>
           </div>
 
           {/* Max Participants */}
@@ -183,10 +230,14 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
             </label>
             <input
               type="number"
+              min="1"
               {...register('maxParticipants')}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
-              placeholder="Kosongkan jika tidak terbatas"
+              placeholder="Tidak terbatas"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              👥 Kosongkan jika tidak ada batasan peserta
+            </p>
           </div>
 
           {/* Status */}
@@ -207,6 +258,9 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
             {errors.status && (
               <p className="text-red-600 text-sm mt-1">{errors.status.message}</p>
             )}
+            <p className="text-xs text-gray-500 mt-1">
+              ⚡ Status saat ini dari pelatihan
+            </p>
           </div>
 
           {/* Instructor */}
@@ -248,24 +302,38 @@ export default function TrainingForm({ training, onSubmit, onCancel }: TrainingF
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"
               placeholder="https://example.com/image.jpg"
             />
+            <p className="text-xs text-gray-500 mt-1">
+              🖼️ Link gambar pelatihan (opsional). Harus dimulai dengan https://
+            </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-end space-x-3 pt-6">
+        <div className="flex justify-end space-x-3 pt-6 border-t">
           <button
             type="button"
             onClick={onCancel}
-            className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+            disabled={loading}
+            className="px-5 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
           >
             Batal
           </button>
           <button
             type="submit"
             disabled={loading}
-            className="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-md text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-5 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-md text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
           >
-            {loading ? 'Menyimpan...' : (training ? 'Update' : 'Simpan')}
+            {loading ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Menyimpan...
+              </>
+            ) : (
+              training ? '💾 Simpan Perubahan' : '✓ Buat Pelatihan'
+            )}
           </button>
         </div>
       </form>

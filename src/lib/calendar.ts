@@ -13,7 +13,7 @@ export async function getCalendarEvents(timeMin?: string, timeMax?: string) {
     const authClient = await auth.getClient();
     
     const response = await calendar.events.list({
-      auth: authClient,
+      auth: authClient as any,
       calendarId: process.env.GOOGLE_CALENDAR_ID,
       timeMin: timeMin || new Date().toISOString(),
       timeMax: timeMax,

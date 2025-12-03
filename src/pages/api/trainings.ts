@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { adminDb } from '@/lib/firebase-admin';
+import { localDb } from '@/lib/local-db';
 import { Training } from '@/types';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -7,34 +7,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       const { status, limit } = req.query;
       
-      let query = adminDb.collection('trainings');
-      
-      // Filter by status if provided
-      if (status && status !== 'all') {
-        query = query.where('status', '==', status);
-      }
-      
-      // Add ordering
-      query = query.orderBy('startDate', 'asc');
-      
-      // Add limit if provided
-      if (limit) {
-        query = query.limit(parseInt(limit as string));
-      }
-      
-      const snapshot = await query.get();
-      const trainings: Training[] = [];
-      
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        trainings.push({
-          id: doc.id,
-          ...data,
-          startDate: data.startDate.toDate(),
-          endDate: data.endDate.toDate(),
-          createdAt: data.createdAt.toDate(),
-          updatedAt: data.updatedAt.toDate(),
-        } as Training);
+      const trainings = await localDb.getAll({
+        status: status as string,
+        limit: limit ? parseInt(limit as string) : undefined,
       });
       
       res.status(200).json({ trainings });
@@ -46,21 +21,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       const trainingData = req.body;
       
-      // Add timestamps
-      const now = new Date();
-      const training = {
-        ...trainingData,
-        startDate: new Date(trainingData.startDate),
-        endDate: new Date(trainingData.endDate),
-        createdAt: now,
-        updatedAt: now,
-      };
+      // Validate required fields
+      if (!trainingData.title || !trainingData.description || !trainingData.startDate || !trainingData.endDate) {
+        return res.status(400).json({ error: 'Missing required fields' });
+      }
       
-      const docRef = await adminDb.collection('trainings').add(training);
+      const training = await localDb.create(trainingData);
       
       res.status(201).json({ 
-        id: docRef.id, 
-        message: 'Training created successfully' 
+        id: training.id, 
+        message: 'Training created successfully',
+        training
       });
     } catch (error) {
       console.error('Error creating training:', error);

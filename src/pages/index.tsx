@@ -16,7 +16,7 @@ import {
 import Link from 'next/link';
 
 export default function Home() {
-  const { trainings, loading } = useTrainings();
+  const { trainings, loading } = useTrainings('upcoming');
   
   // Get featured trainings (first 6 for landing page)
   const featuredTrainings = trainings.slice(0, 6);

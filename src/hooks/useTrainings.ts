@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { collection, query, orderBy, onSnapshot, where, Timestamp, doc, DocumentSnapshot } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import { Training } from '@/types';
 
 export function useTrainings(filter?: 'upcoming' | 'ongoing' | 'all') {
@@ -9,58 +7,42 @@ export function useTrainings(filter?: 'upcoming' | 'ongoing' | 'all') {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // If Firebase is not configured, return demo data
-    if (!db) {
-      setTrainings([]);
-      setLoading(false);
-      setError('Firebase not configured. Please check environment variables.');
-      return;
-    }
-
-    let q = query(collection(db, 'trainings'), orderBy('startDate', 'asc'));
-
-    if (filter === 'upcoming') {
-      q = query(
-        collection(db, 'trainings'),
-        where('startDate', '>', Timestamp.now()),
-        orderBy('startDate', 'asc')
-      );
-    } else if (filter === 'ongoing') {
-      const now = Timestamp.now();
-      q = query(
-        collection(db, 'trainings'),
-        where('startDate', '<=', now),
-        where('endDate', '>=', now),
-        orderBy('startDate', 'asc')
-      );
-    }
-
-    const unsubscribe = onSnapshot(
-      q,
-      (snapshot: any) => {
-        const trainingsData: Training[] = [];
-        snapshot.forEach((doc: any) => {
-          const data = doc.data();
-          trainingsData.push({
-            id: doc.id,
-            ...data,
-            startDate: data.startDate.toDate(),
-            endDate: data.endDate.toDate(),
-            createdAt: data.createdAt.toDate(),
-            updatedAt: data.updatedAt.toDate(),
-          } as Training);
-        });
-        setTrainings(trainingsData);
-        setLoading(false);
-      },
-      (error: any) => {
-        console.error('Error fetching trainings:', error);
-        setError(error.message);
+    const fetchTrainings = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/trainings?status=${filter || 'all'}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch trainings');
+        }
+        
+        const data = await response.json();
+        
+        // Convert date strings back to Date objects
+        const trainingsWithDates = data.trainings.map((training: any) => ({
+          ...training,
+          startDate: new Date(training.startDate),
+          endDate: new Date(training.endDate),
+          createdAt: new Date(training.createdAt),
+          updatedAt: new Date(training.updatedAt),
+        }));
+        
+        setTrainings(trainingsWithDates);
+        setError(null);
+      } catch (err: any) {
+        console.error('Error fetching trainings:', err);
+        setError(err.message);
+      } finally {
         setLoading(false);
       }
-    );
+    };
 
-    return () => unsubscribe();
+    fetchTrainings();
+    
+    // Poll every 5 seconds to simulate real-time updates
+    const interval = setInterval(fetchTrainings, 5000);
+    
+    return () => clearInterval(interval);
   }, [filter]);
 
   return { trainings, loading, error };
@@ -74,40 +56,37 @@ export function useTraining(id: string) {
   useEffect(() => {
     if (!id) return;
 
-    // If Firebase is not configured, return error
-    if (!db) {
-      setTraining(null);
-      setLoading(false);
-      setError('Firebase not configured. Please check environment variables.');
-      return;
-    }
-
-    const unsubscribe = onSnapshot(
-      doc(db, 'trainings', id),
-      (docSnapshot: DocumentSnapshot) => {
-        if (docSnapshot.exists()) {
-          const data = docSnapshot.data();
-          setTraining({
-            id: docSnapshot.id,
-            ...data,
-            startDate: data?.startDate.toDate(),
-            endDate: data?.endDate.toDate(),
-            createdAt: data?.createdAt.toDate(),
-            updatedAt: data?.updatedAt.toDate(),
-          } as Training);
-        } else {
-          setTraining(null);
+    const fetchTraining = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/trainings/${id}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch training');
         }
-        setLoading(false);
-      },
-      (error: any) => {
-        console.error('Error fetching training:', error);
-        setError(error.message);
+        
+        const data = await response.json();
+        
+        // Convert date strings back to Date objects
+        const trainingWithDates = {
+          ...data.training,
+          startDate: new Date(data.training.startDate),
+          endDate: new Date(data.training.endDate),
+          createdAt: new Date(data.training.createdAt),
+          updatedAt: new Date(data.training.updatedAt),
+        };
+        
+        setTraining(trainingWithDates);
+        setError(null);
+      } catch (err: any) {
+        console.error('Error fetching training:', err);
+        setError(err.message);
+      } finally {
         setLoading(false);
       }
-    );
+    };
 
-    return () => unsubscribe();
+    fetchTraining();
   }, [id]);
 
   return { training, loading, error };

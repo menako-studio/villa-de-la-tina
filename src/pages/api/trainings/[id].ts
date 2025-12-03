@@ -1,26 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { adminDb } from '@/lib/firebase-admin';
+import { localDb } from '@/lib/local-db';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query;
 
   if (req.method === 'GET') {
     try {
-      const doc = await adminDb.collection('trainings').doc(id as string).get();
+      const training = await localDb.getById(id as string);
       
-      if (!doc.exists) {
+      if (!training) {
         return res.status(404).json({ error: 'Training not found' });
       }
-      
-      const data = doc.data();
-      const training = {
-        id: doc.id,
-        ...data,
-        startDate: data.startDate.toDate(),
-        endDate: data.endDate.toDate(),
-        createdAt: data.createdAt.toDate(),
-        updatedAt: data.updatedAt.toDate(),
-      };
       
       res.status(200).json({ training });
     } catch (error) {
@@ -31,24 +21,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       const trainingData = req.body;
       
-      // Update timestamp
-      const updatedTraining = {
-        ...trainingData,
-        startDate: new Date(trainingData.startDate),
-        endDate: new Date(trainingData.endDate),
-        updatedAt: new Date(),
-      };
+      const training = await localDb.update(id as string, trainingData);
       
-      await adminDb.collection('trainings').doc(id as string).update(updatedTraining);
+      if (!training) {
+        return res.status(404).json({ error: 'Training not found' });
+      }
       
-      res.status(200).json({ message: 'Training updated successfully' });
+      res.status(200).json({ 
+        message: 'Training updated successfully',
+        training 
+      });
     } catch (error) {
       console.error('Error updating training:', error);
       res.status(500).json({ error: 'Failed to update training' });
     }
   } else if (req.method === 'DELETE') {
     try {
-      await adminDb.collection('trainings').doc(id as string).delete();
+      const success = await localDb.delete(id as string);
+      
+      if (!success) {
+        return res.status(404).json({ error: 'Training not found' });
+      }
       
       res.status(200).json({ message: 'Training deleted successfully' });
     } catch (error) {
