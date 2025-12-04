@@ -1,257 +1,276 @@
-# 🤖 GitHub Copilot Prompt untuk Villa Kuningan Training Center
+# PROJECT BRIEF: Villa Kuningan Website Development
 
-## Konteks Project
-Saya sedang mengembangkan website untuk **Villa Kuningan Training Center** - pusat pelatihan milik DPRD Jawa Barat yang berlokasi di Villa Kuningan. Client saya adalah pemilik villa yang menggunakan ruang rapat untuk pelatihan gratis (saat ini) dan membutuhkan website untuk branding dan pengelolaan pelatihan.
+## CLIENT INFORMATION
+**Client**: Hj. Tina Wiryawati, S.H  
+**Position**: Anggota DPRD Jawa Barat (2019-2024)  
+**Education**: Magister  
+**Political Affiliation**: Fraksi Gerindra Persatuan (GERINDRA)  
+**Electoral District**: Dapil 13 (Kabupaten Kuningan, Kabupaten Ciamis, Kota Banjar, Kabupaten Pangandaran)  
+**Committee Assignments**:
+- Komisi 1 (Bidang Pemerintahan) - Anggota
+- Badan Pembentukan Peraturan Daerah (Anggota)
 
-## Tech Stack yang Sudah Disiapkan
-- **Frontend**: Next.js 14 + TypeScript + Tailwind CSS
-- **Backend**: Firebase/Firestore + Next.js API Routes  
-- **Authentication**: Firebase Auth
-- **Calendar Integration**: Google Calendar API
-- **Deployment**: Firebase Hosting (free tier)
-- **UI Components**: Headless UI + Heroicons + Lucide React
+**Social Media**:
+- TikTok: https://www.tiktok.com/@tinawiryawati
+- Instagram: https://www.instagram.com/tinawiryawaticenter1/?hl=en
 
-## Struktur Project yang Sudah Ada
-```
-src/
-├── components/          # UI components (Header, Footer, TrainingCard, TrainingList)
-├── pages/              # Next.js pages (index.tsx, trainings.tsx, training/[id].tsx, cms.tsx)
-├── pages/api/          # API routes (trainings.ts, calendar.ts)
-├── lib/                # Firebase config, calendar integration
-├── types/              # TypeScript definitions
-├── hooks/              # Custom hooks (useTrainings)
-├── cms/                # Admin CMS components (TrainingForm)
-└── styles/             # Global styles
-```
+---
 
-## Requirements yang Perlu Diimplementasikan
+## PROJECT OVERVIEW
 
-### 1. Core Features ✅ (Sudah ada struktur)
-- [x] Landing page dengan hero section
-- [x] Daftar pelatihan dengan filter (upcoming/ongoing/all)
-- [x] Detail page pelatihan 
-- [x] Admin CMS untuk CRUD pelatihan
-- [x] Google Calendar integration
-- [x] Responsive design
+### Main Objective
+Develop a professional website to brand Villa De Latina Kuningan as a hub for positive community events and to showcase Hj. Tina Wiryawati's involvement and contributions in Kuningan city through her various social programs and community initiatives.
 
-### 2. Features yang Butuh Implementasi Lebih Lanjut
-- [ ] **Authentication system** untuk admin CMS
-- [ ] **Google Calendar sync** - otomatis sync training ke calendar
-- [ ] **Image upload** untuk training images
-- [ ] **Email notifications** untuk registrasi
-- [ ] **Search & filtering** yang lebih advanced
-- [ ] **SEO optimization** 
-- [ ] **Performance optimization**
-- [ ] **Error handling** yang lebih baik
+### Target Audience
+1. **Primary**: Constituents and community members in Kuningan, Ciamis, Banjar, and Pangandaran
+2. **Secondary**: Media, potential event partners, and political stakeholders
+3. **Tertiary**: General public interested in community development programs
 
-### 3. Halaman yang Masih Butuh Dibuat
-- [ ] About page (`/about`) - info tentang Villa & training center
-- [ ] Contact page (`/contact`) - kontak info & lokasi
-- [ ] Authentication pages (`/login`, `/register`)
-- [ ] 404 & error pages
+---
 
-## Design References untuk Styling
-Tolong ikuti design pattern dari website-website ini:
+## APPROVED PACKAGE: STANDARD PACKAGE - Rp 24,000,000
 
-### Local References:
-1. **Traveloka Xperience** (https://www.traveloka.com/en-id/activities)
-   - Clean card layout untuk event listing
-   - Modern color scheme
-   - Clear call-to-action buttons
+### Package Includes:
+- ✅ UI/UX Design (up to 5 screens)
+- ✅ Website Development (up to 5 screens)
+- ✅ Custom Copywriting
+- ✅ SEO Setup (basic + page structure + metadata + Google Search Console)
+- ✅ Domain & Hosting costs covered by CLIENT (estimated additional cost: Rp 500,000 - Rp 1,000,000/year)
 
-2. **Skill Academy by Ruangguru** (https://skillacademy.com/)
-   - Course card design
-   - Professional layout for training/education
-   - Good use of whitespace
+### Budget Breakdown:
+| Component | Budget | Deliverables |
+|-----------|--------|--------------|
+| UI/UX Design | Rp 4,000,000 | Up to 5 screens, 2x revisions, interactive prototype |
+| Development | Rp 14,000,000 | Responsive website, content implementation, Google Analytics setup |
+| SEO Specialist | Rp 3,000,000 | Keyword research, GSC setup, metadata, sitemap |
+| Project Manager | Rp 3,000,000 | Project coordination and delivery |
+| **GRAND TOTAL** | **Rp 24,000,000** | |
 
-3. **Zenius** (https://www.zenius.net/)
-   - Simple, focused design
-   - Minimal but effective UI
+---
 
-### International References:
-1. **Eventbrite** (https://www.eventbrite.com/)
-   - Excellent event discovery & detail pages
-   - Good filtering and search UX
-   - Professional event management UI
+## WEBSITE PURPOSE & BRANDING STRATEGY
 
-2. **Coursera** (https://www.coursera.org/)
-   - Clean course listing design
-   - Good information hierarchy
-   - Trust-building elements
+### Primary Goals:
+1. **Branding Villa De Latina Kuningan** as a venue for meaningful community events
+2. **Portfolio showcase** of past successful events focused on national awareness (wawasan kebangsaan)
+3. **Political portfolio** highlighting Hj. Tina Wiryawati's community involvement and initiatives
+4. **Media hub** featuring press coverage and news articles about her programs
+5. **Event promotion** for upcoming projects and activities
 
-3. **Airbnb Experiences** (https://www.airbnb.com/experiences)
-   - Location-based activity booking
-   - Beautiful image-focused cards
-   - Smooth user experience
+### Key Events to Feature:
+1. **Past Events**: Wawasan Kebangsaan Kuningan events
+2. **Upcoming Events**:
+   - Soft launching KOPIKU (Komunitas Pemikir Kuningan) - New Year 2026
+   - Trail Run - Annual event 2026
+   - Other community initiatives
 
-4. **Meetup** (https://www.meetup.com/)
-   - Community event management
-   - Clear event information display
-   - Good mobile responsiveness
+### Media Coverage Examples to Feature:
+1. [Pengawasan Penyelenggaraan Pemerintahan 2025 di Ciamis](https://kuninganonline.com/legislator-gerindra-tina-wiryawati-gelar-pengawasan-penyelenggaraan-pemerintahan-tahun-2025-di-ciamis/)
+2. [Penguatan Wawasan Kebangsaan dengan Metode Edukatif](https://kuninganonline.com/tina-wiryawati-dan-kesbangpol-jabar-dorong-penguatan-wawasan-kebangsaan-dengan-metode-edukatif-dan-youthful/)
+3. [Penyuluhan LBH PIRA tentang Hak Perempuan](https://kuninganrelegi.com/lbh-pira-gelar-penyuluhan-di-rumah-aspirasi-tina-wiryawati-ajak-perempuan-desa-kenali-hak-dan-lawan-kekerasan/)
 
-## Color Scheme & Brand Guidelines
-```css
-/* Primary Colors */
-primary-50: '#f0f9ff'
-primary-500: '#3b82f6' /* Main blue */  
-primary-600: '#2563eb'
-primary-700: '#1d4ed8'
-primary-900: '#1e3a8a'
+---
 
-/* Secondary Colors */
-secondary-50: '#f8fafc'
-secondary-100: '#f1f5f9'  
-secondary-500: '#64748b'
-secondary-600: '#475569'
-secondary-900: '#0f172a'
+## REQUIRED SCOPE OF WORK (SOW) DOCUMENTS
 
-/* Success/Free */
-green-600: untuk pelatihan gratis
+Please generate TWO comprehensive SOW documents:
 
-/* Status Colors */
-blue-100: upcoming trainings
-green-100: ongoing trainings  
-gray-100: completed trainings
-red-100: cancelled trainings
-```
+### 1. SOW FOR UI/UX DESIGNER (Budget: Rp 4,000,000)
 
-## Specific Implementation Tasks
+**Document Requirements:**
+- Complete deliverables breakdown
+- Timeline milestones
+- Revision policy (2x revisions included)
+- Assets required from client
+- Design system specifications
+- Prototype specifications
+- Handoff requirements to developer
 
-### Task 1: Complete Authentication System
-```typescript
-// Implement Firebase Auth untuk CMS admin
-// - Login/logout functionality
-// - Protected routes untuk /cms
-// - Session management
-// - Role-based access control
-```
+**Key Sections to Include:**
+1. **Project Overview & Objectives**
+2. **Target Audience Analysis**
+3. **Design Scope** (Up to 5 screens):
+   - Homepage
+   - About Us (Tentang Kami) - featuring Tina Wiryawati's profile and involvement
+   - Events Portfolio (Past events showcase)
+   - Blog/Media Coverage page
+   - Contact page
+4. **User Research & User Flow**
+5. **Wireframe Requirements**
+6. **Visual Design Requirements**:
+   - Branding alignment with Villa De Latina Kuningan
+   - Professional political portfolio aesthetic
+   - Mobile-first responsive design
+7. **Interactive Prototype Specifications**
+8. **Design Deliverables**:
+   - High-fidelity mockups
+   - Design system documentation
+   - Asset exports for development
+   - UX documentation
+9. **Timeline & Milestones**
+10. **Revision Process**
+11. **Acceptance Criteria**
 
-### Task 2: Google Calendar Integration
-```typescript
-// Fitur yang dibutuhkan:
-// - Auto-create calendar event saat training dibuat
-// - Sync training updates ke calendar
-// - Display calendar events di website
-// - Real-time calendar widget di homepage
-```
+### 2. SOW FOR SEO SPECIALIST (Budget: Rp 3,000,000)
 
-### Task 3: Enhanced CMS Features
-```typescript
-// Tambahan fitur CMS:
-// - Image upload untuk training photos
-// - Bulk actions (delete multiple trainings)
-// - Training analytics/statistics
-// - Export training data
-// - Email blast ke participants
-```
+**Document Requirements:**
+- Complete SEO strategy
+- Keyword research methodology
+- Technical SEO checklist
+- Content optimization guidelines
+- Performance metrics and KPIs
+- Monthly reporting format
 
-### Task 4: User Registration System
-```typescript
-// Registration flow:
-// - User bisa daftar training dari detail page
-// - Form pendaftaran dengan validasi
-// - Email confirmation
-// - Admin bisa lihat daftar peserta
-// - Automated reminder emails
-```
+**Key Sections to Include:**
+1. **Project Overview & SEO Objectives**
+2. **Target Keywords Strategy**:
+   - Focus on Kuningan, Ciamis, Banjar, Pangandaran areas
+   - Political and community event keywords
+   - Villa De Latina Kuningan branding keywords
+3. **Technical SEO Setup**:
+   - Google Search Console configuration
+   - XML Sitemap creation and submission
+   - Robots.txt optimization
+   - URL structure best practices
+   - Schema markup recommendations
+4. **On-Page SEO**:
+   - Metadata optimization (title tags, meta descriptions) for each page
+   - Header tag structure (H1, H2, H3)
+   - Image alt text optimization
+   - Internal linking strategy
+5. **Content Optimization**:
+   - Keyword integration in existing copy
+   - Content recommendations for blog posts
+   - SEO-friendly content guidelines for future updates
+6. **Local SEO**:
+   - Google Business Profile optimization (if applicable)
+   - Local citation strategy
+   - Location-based keyword targeting
+7. **Performance Tracking**:
+   - Google Analytics setup verification
+   - Google Tag Manager implementation support
+   - Key metrics to track (organic traffic, keyword rankings, bounce rate)
+8. **Deliverables**:
+   - Keyword research report
+   - Technical SEO audit checklist
+   - On-page SEO implementation guide
+   - Content optimization recommendations
+   - Monthly SEO performance report template
+9. **Timeline & Milestones**
+10. **Acceptance Criteria**
 
-### Task 5: Advanced Search & Filter
-```typescript
-// Search features:
-// - Search by keyword, category, instructor
-// - Date range filter
-// - Location filter
-// - Price filter (future-ready)
-// - Sort by date, popularity, etc.
-```
+---
 
-## Content Guidelines
+## CONTENT REQUIREMENTS
 
-### Bahasa Indonesia
-- Gunakan bahasa Indonesia yang formal tapi friendly
-- Konsisten dengan terminologi: "Pelatihan" (bukan "Training")
-- Error messages dalam bahasa Indonesia
-- Date formatting: "15 Desember 2024" format
+### About Us (Tentang Kami) Page - Critical Content:
+- Professional biography of Hj. Tina Wiryawati, S.H
+- Political background and credentials
+- Committee assignments and responsibilities
+- Vision and mission for community development
+- Portfolio of community involvement in Kuningan
+- Social media integration (TikTok, Instagram)
 
-### Content Structure
-- Hero section: Fokus pada "Pelatihan Berkualitas di Kuningan"
-- Value proposition: Gratis, berkualitas, instruktur berpengalaman
-- Call-to-action: "Daftar Sekarang", "Lihat Detail", "Hubungi Kami"
+### Events Portfolio Page:
+- Past events gallery with descriptions
+- Wawasan Kebangsaan events showcase
+- Event impact and outcomes
+- Photo galleries from events
 
-## Performance & SEO Requirements
+### Blog/Media Coverage Page:
+- Curated news articles from media coverage
+- Press releases
+- Program updates
+- Community initiatives spotlight
 
-### Performance
-- Lazy loading untuk images
-- Code splitting untuk pages
-- Optimize bundle size
-- Fast loading times (< 3s)
+---
 
-### SEO
-- Meta tags untuk semua pages
-- Structured data untuk events
-- Sitemap generation
-- Open Graph tags
-- Twitter cards
+## TECHNICAL REQUIREMENTS
 
-## Mobile-First Design
-- Responsive breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
-- Touch-friendly buttons (min 44px)
-- Mobile navigation menu
-- Optimized form inputs untuk mobile
+### Website Structure (5 screens):
+1. **Homepage** - Hero section, featured events, latest news
+2. **Tentang Kami** - Full profile and credentials of Tina Wiryawati
+3. **Portfolio Acara** - Past and upcoming events showcase
+4. **Blog/Berita** - Media coverage and news articles
+5. **Kontak** - Contact form and information
 
-## Instructions untuk Copilot
+### Technical Stack (from Developer scope):
+- HTML/CSS/JavaScript Frontend
+- Responsive Design (Mobile & Desktop)
+- Google Tag Manager / Analytics setup
+- Performance optimization
+- Basic deployment
 
-Ketika mengimplementasikan features:
+### SEO Requirements:
+- Google Search Console setup
+- Metadata for all pages
+- SEO-friendly URL structure
+- XML Sitemap
+- Basic keyword optimization
 
-1. **Selalu ikuti TypeScript best practices**
-2. **Gunakan Tailwind CSS classes yang sudah defined**
-3. **Implement error boundaries dan loading states**
-4. **Add proper form validation dengan react-hook-form**
-5. **Ensure accessibility (ARIA labels, semantic HTML)**
-6. **Follow React best practices (hooks, components)**
-7. **Add proper TypeScript types untuk semua props**
-8. **Implement responsive design dari mobile-first**
-9. **Add proper error handling untuk API calls**
-10. **Include loading states untuk semua async operations**
+---
 
-## Example Implementation Pattern
-```typescript
-// Contoh pattern yang diinginkan untuk components:
+## DELIVERABLES TIMELINE EXPECTATIONS
 
-interface ComponentProps {
-  // Always define proper TypeScript interfaces
-  data: DataType[];
-  loading?: boolean;
-  error?: string;
-  onAction?: (id: string) => void;
-}
+### Phase 1: Design (UI/UX Designer)
+- User research & wireframes: Week 1-2
+- Visual design & prototype: Week 3-4
+- Revisions & finalization: Week 5
 
-export default function Component({ data, loading, error, onAction }: ComponentProps) {
-  // Loading state
-  if (loading) {
-    return <div className="animate-pulse">...</div>;
-  }
-  
-  // Error state  
-  if (error) {
-    return <div className="text-red-600">Error: {error}</div>;
-  }
-  
-  // Main content with proper Tailwind classes
-  return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
-      {/* Content here */}
-    </div>
-  );
-}
-```
+### Phase 2: SEO Strategy (SEO Specialist - parallel with design)
+- Keyword research: Week 1-2
+- Technical SEO plan: Week 2-3
+- Content optimization guidelines: Week 3-4
 
-## Next Steps
-Tolong implementasikan fitur-fitur di atas secara bertahap, mulai dari yang paling critical:
-1. Authentication system
-2. Google Calendar integration  
-3. About & Contact pages
-4. Enhanced error handling
-5. Performance optimizations
+### Phase 3: Development (Post-SOW approval)
+- Frontend development: Week 6-9
+- Content integration: Week 10
+- Testing & deployment: Week 11-12
 
-Prioritaskan user experience yang smooth dan professional sesuai dengan referensi design yang sudah diberikan.
+---
+
+## SUCCESS CRITERIA
+
+### For UI/UX Designer:
+- Professional design that reflects political credibility and community engagement
+- User-friendly navigation for target audience
+- Mobile-responsive design
+- Brand consistency with Villa De Latina Kuningan identity
+- Clear visual hierarchy showcasing events and media coverage
+
+### For SEO Specialist:
+- Website appears in Google Search Console within 2 weeks
+- All pages have optimized metadata
+- Sitemap submitted and indexed
+- Keyword strategy targeting local constituencies
+- Foundation for organic traffic growth
+
+---
+
+## NEXT STEPS
+
+1. Generate detailed SOW for UI/UX Designer
+2. Generate detailed SOW for SEO Specialist
+3. Client review and approval of SOWs
+4. Budget confirmation
+5. Kick-off meeting scheduling
+6. Project initiation
+
+---
+
+## IMPORTANT NOTES
+
+- Domain & hosting costs are CLIENT's responsibility (Rp 500K - 1M/year)
+- Design includes 2x revision rounds only
+- Website content will integrate custom copywriting
+- Focus on political portfolio and community branding
+- Social media integration is essential
+- Media coverage integration is a key feature
+
+---
+
+**Task for Copilot**: Based on this comprehensive brief, please generate two professional SOW (Scope of Work) documents:
+1. **UI/UX Designer SOW** - Detailed, actionable, and professional document ready for client pitch
+2. **SEO Specialist SOW** - Comprehensive strategy and deliverables document ready for client pitch
+
+Each SOW should be formatted professionally, include clear deliverables, timelines, acceptance criteria, and payment milestones. The documents should be ready to present to the client for approval before kick-off meeting.
