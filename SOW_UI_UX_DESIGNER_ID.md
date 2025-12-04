@@ -585,25 +585,19 @@ Untuk memastikan penyelesaian proyek tepat waktu, klien harus menyediakan:
 
 ## 13. SYARAT PEMBAYARAN
 
+
 ### 13.1 Total Investasi
 **Rp 4.000.000** (Empat Juta Rupiah)
 
 ### 13.2 Jadwal Pembayaran
 
-**Milestone 1: Inisiasi Proyek (30%)**
-- Jumlah: Rp 1.200.000
-- Jatuh Tempo: Setelah persetujuan SOW dan sebelum pekerjaan dimulai
-- Memicu dimulainya riset dan wireframing
+**Termin 1: 40% (Rp 1.600.000)**
+- Dibayarkan setelah persetujuan desain awal UI/UX (mockup/desain visual pertama)
+- Memicu dimulainya proses development website
 
-**Milestone 2: Persetujuan Desain (40%)**
-- Jumlah: Rp 1.600.000
-- Jatuh Tempo: Setelah persetujuan desain visual lengkap (akhir Minggu 4)
-- Memicu dimulainya putaran revisi
-
-**Milestone 3: Pengiriman Final (30%)**
-- Jumlah: Rp 1.200.000
-- Jatuh Tempo: Setelah persetujuan final dan handoff lengkap
-- Termasuk semua aset dan dokumentasi
+**Termin 2: 60% (Rp 2.400.000)**
+- Dibayarkan setelah website selesai, sudah live, dan pelunasan dilakukan
+- Termasuk semua aset, dokumentasi, dan handoff developer
 
 ### 13.3 Metode Pembayaran
 - Transfer bank ke rekening Menako Studio (detail disediakan dalam invoice)
@@ -624,8 +618,8 @@ Untuk memastikan penyelesaian proyek tepat waktu, klien harus menyediakan:
 ### 14.2 Batasan
 - Desain terbatas pada 5 layar unik
 - Maksimal 2 putaran revisi
-- Timeline adalah 5 minggu (dapat diperpanjang hanya dengan persetujuan bersama)
-- Hanya desain (tidak termasuk development dalam SOW ini)
+- Total durasi project maksimal 2 bulan (termasuk proses desain, development, dan website sudah live)
+- Hanya desain (tidak termasuk development dalam SOW ini, kecuali sudah disepakati dalam proses pelaksanaan)
 
 ### 14.3 Di Luar Cakupan
 Berikut TIDAK termasuk dalam SOW ini:
