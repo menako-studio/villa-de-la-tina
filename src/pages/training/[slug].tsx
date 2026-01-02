@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Header, Footer } from '@/components';
 import { 
   CalendarDaysIcon, 
   MapPinIcon, 
@@ -19,6 +18,11 @@ import { format } from 'date-fns';
 import { id } from 'date-fns/locale';
 import { Training } from '@/types';
 
+/**
+ * Training Detail Page
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ */
 export default function TrainingDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -70,14 +74,12 @@ export default function TrainingDetailPage() {
   if (loading) {
     return (
       <>
-        <Header />
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
           <div className="text-center">
             <div className="w-12 h-12 mx-auto border-b-2 rounded-full animate-spin border-primary-600"></div>
             <p className="mt-4 text-gray-500">Memuat data...</p>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -85,7 +87,6 @@ export default function TrainingDetailPage() {
   if (error || !training) {
     return (
       <>
-        <Header />
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
           <div className="text-center">
             <p className="text-lg text-red-600">{error || 'Pelatihan tidak ditemukan'}</p>
@@ -94,7 +95,6 @@ export default function TrainingDetailPage() {
             </Link>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -586,8 +586,6 @@ export default function TrainingDetailPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

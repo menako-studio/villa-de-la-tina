@@ -1,8 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { 
-  Navbar, 
-  Footer, 
   Hero, 
   Intro, 
   Facilities, 
@@ -11,6 +9,17 @@ import {
   FinalCTA 
 } from '@/components';
 
+/**
+ * Home Page - Landing Page
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ * This page only needs to render the content sections.
+ * 
+ * Best Practices Applied:
+ * - No duplicate Navbar/Footer management
+ * - Clean separation of concerns
+ * - Focused on page-specific content
+ */
 export default function Home() {
 
   return (
@@ -26,14 +35,12 @@ export default function Home() {
       </Head>
 
       <main className="bg-[#f9f6f1] min-h-screen">
-        <Navbar />
         <Hero />
         <Intro />
         <Facilities />
         <Packages />
         <Gallery />
         <FinalCTA />
-        <Footer />
       </main>
     </>
   );

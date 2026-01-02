@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Header, Footer } from '@/components';
 import { 
   MapPinIcon, 
   PhoneIcon, 
@@ -11,6 +10,12 @@ import {
   AcademicCapIcon
 } from '@heroicons/react/24/outline';
 
+/**
+ * About Page
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ * This eliminates duplication and ensures consistent layout across all pages.
+ */
 export default function About() {
   return (
     <>
@@ -21,9 +26,6 @@ export default function About() {
           content="Villa Kuningan Training Center adalah pusat pelatihan terdepan di Kuningan, Jawa Barat yang menyediakan berbagai program pelatihan berkualitas." 
         />
       </Head>
-
-      <Header />
-
 
       <main className="bg-[#fafbfc]">
         {/* Hero Section - Meetup Style */}
@@ -430,8 +432,6 @@ export default function About() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

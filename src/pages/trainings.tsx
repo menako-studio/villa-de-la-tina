@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Header, Footer, TrainingList } from '@/components';
+import { TrainingList } from '@/components';
 import { useTrainings } from '@/hooks/useTrainings';
 
-
+/**
+ * Trainings Page - List of All Trainings
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ */
 export default function TrainingsPage() {
   const [filter, setFilter] = useState<'all' | 'upcoming' | 'ongoing'>('all');
   const { trainings, loading, error } = useTrainings(filter);
@@ -23,8 +27,6 @@ export default function TrainingsPage() {
           content="Lihat semua program pelatihan yang tersedia di Villa Kuningan Training Center. Pelatihan berkualitas dengan instruktur berpengalaman." 
         />
       </Head>
-
-      <Header />
 
       <main className="min-h-screen bg-gray-50">
         {/* Page Header */}
@@ -78,8 +80,6 @@ export default function TrainingsPage() {
           />
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }

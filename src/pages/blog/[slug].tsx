@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header, Footer } from '@/components';
 import { 
   CalendarDaysIcon, 
   ClockIcon, 
@@ -14,6 +13,12 @@ import {
   TagIcon,
   ArrowLeftIcon
 } from '@heroicons/react/24/outline';
+
+/**
+ * Blog Detail Page
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ */
 
 // Mock blog data (same as blog/index.tsx)
 const blogPosts = [
@@ -189,7 +194,6 @@ export default function BlogPost() {
   if (!post) {
     return (
       <>
-        <Header />
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">Artikel tidak ditemukan</h1>
@@ -198,7 +202,6 @@ export default function BlogPost() {
             </Link>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -222,8 +225,6 @@ export default function BlogPost() {
         <meta property="og:image" content={post.image} />
         <meta property="og:type" content="article" />
       </Head>
-
-      <Header />
 
       <main>
         {/* Hero Image */}
@@ -442,8 +443,6 @@ export default function BlogPost() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

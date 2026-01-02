@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header, Footer } from '@/components';
 import { 
   CalendarDaysIcon, 
   ClockIcon, 
@@ -11,6 +10,12 @@ import {
   MagnifyingGlassIcon,
   FunnelIcon
 } from '@heroicons/react/24/outline';
+
+/**
+ * Blog Index Page
+ * 
+ * Navbar and Footer are automatically provided by RootLayout in _app.tsx
+ */
 
 // Mock blog data
 const blogPosts = [
@@ -133,8 +138,6 @@ export default function Blog() {
           content="Temukan artikel, tips, dan insights terbaru seputar pelatihan, karier, dan pengembangan diri dari Villa Kuningan Training Center." 
         />
       </Head>
-
-      <Header />
 
       <main>
         {/* Hero Section */}
@@ -377,8 +380,6 @@ export default function Blog() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }
