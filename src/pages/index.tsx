@@ -1,13 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Intro from '@/components/Intro';
-import Facilities from '@/components/Facilities';
-import Packages from '@/components/Packages';
-import Gallery from '@/components/Gallery';
-import FinalCTA from '@/components/FinalCTA';
-import Footer from '@/components/Footer';
+import { 
+  Navbar, 
+  Footer, 
+  Hero, 
+  Intro, 
+  Facilities, 
+  Packages, 
+  Gallery, 
+  FinalCTA 
+} from '@/components';
 
 export default function Home() {
 

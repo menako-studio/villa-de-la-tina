@@ -1,5 +1,5 @@
 import React from 'react';
-import FacilityCard from './FacilityCard';
+import FacilityCard from '../cards/FacilityCard';
 
 const facilities = [
   {

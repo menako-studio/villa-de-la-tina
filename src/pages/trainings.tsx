@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import TrainingList from '@/components/TrainingList';
+import { Header, Footer, TrainingList } from '@/components';
 import { useTrainings } from '@/hooks/useTrainings';
 
 

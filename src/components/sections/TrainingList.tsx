@@ -1,5 +1,5 @@
 import React from 'react';
-import TrainingCard from './TrainingCard';
+import TrainingCard from '../cards/TrainingCard';
 import { Training } from '@/types';
 
 interface TrainingListProps {

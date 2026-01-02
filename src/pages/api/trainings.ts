@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { localDb } from '@/lib/local-db';
-import { initializeTrainings } from '@/lib/initialize-data';
+import { localDb } from '@/lib/services/local-db';
+import { initializeTrainings } from '@/lib/services/initialize-data';
 import { Training } from '@/types';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

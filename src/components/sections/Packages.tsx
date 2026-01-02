@@ -1,6 +1,6 @@
 import React from 'react';
-import PackageCard from './PackageCard';
-import CTACard from './CTACard';
+import PackageCard from '../cards/PackageCard';
+import CTACard from '../cards/CTACard';
 
 const packages = [
   {
