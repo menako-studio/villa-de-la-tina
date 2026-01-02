@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(416);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setSlideWidth(typeof window !== 'undefined' && window.innerWidth < 1024 ? 336 : 416);
+    };
+    
+    if (typeof window !== 'undefined') {
+      handleResize();
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
   
   const carouselImages = [
     { alt: 'Cottage', image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=1200&fit=crop' },
@@ -37,9 +50,9 @@ export default function Home() {
       <main className="bg-[#f9f6f1] min-h-screen">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-          <div className="max-w-[1200px] mx-auto px-[60px] py-4 flex items-center justify-between">
-            {/* Left Links */}
-            <div className="flex items-center gap-6">
+          <div className="max-w-[1200px] mx-auto px-6 py-4 lg:px-[60px] flex items-center justify-between">
+            {/* Left Links - Hidden on mobile */}
+            <div className="items-center hidden gap-6 lg:flex">
               <Link href="/penginapan" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
                 Penginapan
               </Link>
@@ -58,8 +71,8 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Right Links */}
-            <div className="flex items-center gap-6">
+            {/* Right Links - Hidden on mobile */}
+            <div className="items-center hidden gap-6 lg:flex">
               <Link href="/twc" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
                 TWC
               </Link>
@@ -67,15 +80,24 @@ export default function Home() {
                 Tentang Kami
               </Link>
             </div>
+
+            {/* Menu Icon - Visible on mobile */}
+            <button className="lg:hidden p-2.5 rounded" aria-label="Menu">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <rect x="5" y="8" width="22" height="2" fill="#222"/>
+                <rect x="5" y="15" width="22" height="2" fill="#222"/>
+                <rect x="5" y="22" width="22" height="2" fill="#222"/>
+              </svg>
+            </button>
           </div>
         </nav>
 
         {/* Hero Section */}
-        <section className="relative h-[600px] flex flex-col items-center justify-center overflow-hidden pt-[148px]">
+        <section className="relative h-[600px] flex flex-col items-center justify-center overflow-hidden pt-0 lg:pt-[148px]">
           {/* Background Video/Image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop"
+              src="/images/hero.webp"
               alt="Nature background"
               fill
               className="object-cover"
@@ -86,12 +108,12 @@ export default function Home() {
           </div>
           
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col items-center gap-6 px-[120px] max-w-[700px]">
-            <h1 className="font-['Young_Serif'] font-semibold text-[56px] leading-[67.2px] tracking-[-2px] text-white text-center">
-              A Private Retreat in<br />the Heart of Nature
+          <div className="relative z-10 flex flex-col items-center gap-6 px-6 max-w-[750px] pb-10 lg:pb-0">
+            <h1 className="font-['Young_Serif'] font-semibold text-[38px] leading-[45.6px] lg:text-[56px] lg:leading-[67.2px] tracking-[-2px] text-white text-center">
+              A Private Retreat in<span className="lg:inline"><br /></span> the Heart of Nature
             </h1>
-            <div className="flex flex-col items-center gap-6 w-full">
-              <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#d1d1d1] text-center">
+            <div className="flex flex-col items-center w-full gap-6">
+              <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#d1d1d1] text-center">
                 Villa De La Tina adalah ruang tinggal yang tenang dan intim, dikelilingi lanskap alami Kuningan. 
                 Dirancang untuk mereka yang menghargai ketenangan, ruang, dan waktu yang berjalan lebih pelan.
               </p>
@@ -103,19 +125,19 @@ export default function Home() {
         </section>
 
         {/* Intro Section */}
-        <section className="bg-[#f9f6f1] py-[168px] px-20 flex flex-col items-center justify-center">
-          <div className="max-w-[1200px] flex flex-col h-[584px] items-center justify-between">
-            <h2 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-black text-center max-w-full">
+        <section className="bg-[#f9f6f1] py-20 lg:py-[168px] px-6 lg:px-20 flex flex-col items-center justify-center">
+          <div className="max-w-[1200px] flex flex-col lg:h-[584px] items-center justify-between gap-20">
+            <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black text-center max-w-full">
               Di tengah lanskap hijau Kuningan, Villa De La Tina hadir sebagai ruang yang menyatu dengan alam, 
               tenang, terbuka, dan penuh kehadiran. Sebuah tempat di mana cahaya, udara, dan waktu bergerak dengan iramanya sendiri.
             </h2>
-            <div className="flex flex-col gap-6 items-start justify-center w-[700px]">
-              <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545] text-center w-full">
+            <div className="flex flex-col gap-4 lg:gap-6 items-start justify-center w-full lg:w-[700px]">
+              <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] text-center w-full">
                 Setiap sudut di Villa De La Tina dirancang untuk memberi jarak dari hiruk pikuk, menghadirkan ketenangan yang terasa alami, 
                 bukan sekadar tempat singgah, tetapi ruang untuk benar-benar tinggal, mendengarkan alam, dan kembali pada ritme yang lebih pelan.
               </p>
-              <div className="h-9 relative w-full flex items-center justify-center">
-                <p className="font-['Adventures_Unlimited_Script'] text-[45px] leading-[35.2px] tracking-[-0.3px] text-[#8c3128] text-center transform -rotate-[5deg]">
+              <div className="relative flex items-center justify-center w-full h-9">
+                <p className="font-['Adventures_Unlimited_Script'] text-[32px] lg:text-[45px] leading-[25.4px] lg:leading-[35.2px] tracking-[-0.3px] text-[#8c3128] text-center transform -rotate-[5deg]">
                   selamat datang!
                 </p>
               </div>
@@ -124,65 +146,89 @@ export default function Home() {
         </section>
 
         {/* Facilities Section */}
-        <section className="bg-[#f9f6f1] py-20 px-20">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
+        <section className="bg-[#f9f6f1] py-10 lg:py-20 px-6 lg:px-20">
+          <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-20">
             {/* Header */}
-            <div className="flex flex-col gap-10 items-center text-center">
-              <h2 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-black">
-                Dirancang untuk Memulihkan dan<br />Dijalani dengan Tenang
+            <div className="flex flex-col items-center gap-6 text-center lg:gap-10">
+              <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black">
+                Dirancang untuk Memulihkan dan<br className="hidden lg:block" /> Dijalani dengan Tenang
               </h2>
-              <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545] max-w-[700px]">
+              <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
                 Di Villa De La Tina, fasilitas bukan sekadar pelengkap. Ia hadir sebagai bagian dari pengalaman yang menyatu dengan alam, 
                 menyelaraskan tubuh dan pikiran, tanpa perlu berlebihan.
               </p>
             </div>
             
             {/* Facilities Grid */}
-            <div className="flex gap-20">
-              {/* Left Column */}
-              <div className="flex flex-col gap-20 w-[550px]">
+            <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
+              {/* Left Column - Mobile: Stacked */}
+              <div className="flex flex-col gap-10 lg:gap-20 w-full lg:w-[550px]">
                 {/* SPA */}
-                <div className="flex flex-col gap-10">
-                  <div className="h-[400px] overflow-hidden relative">
+                <div className="flex flex-col gap-6 lg:gap-10">
+                  <div className="h-[300px] lg:h-[400px] overflow-hidden relative">
                     <Image
-                      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1100&h=800&fit=crop"
+                      src="/images/spa.webp"
                       alt="Spa"
                       fill
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-4 lg:gap-6">
                     <div className="flex flex-col gap-2">
                       <p className="font-['Manrope'] font-medium text-[16px] leading-[24px] text-black">SPA</p>
-                      <h3 className="font-['Young_Serif'] font-medium text-[24px] leading-[36px] tracking-[-0.4px] text-[#d95143]">
+                      <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
                         Sebuah Ritual untuk Kembali Seimbang
                       </h3>
                     </div>
-                    <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
                       Di ruang spa yang tenang dan tertutup, waktu seolah melambat. Sentuhan perawatan dilakukan dengan ritme yang lembut, 
                       memberi kesempatan bagi tubuh untuk benar-benar beristirahat dan melepaskan lelah yang tertinggal.
                     </p>
                   </div>
                 </div>
                 
-                {/* Pool */}
-                <div className="flex flex-col gap-10 w-[470px] ml-auto">
-                  <div className="h-[320px] overflow-hidden relative">
+                {/* Sauna - Mobile order */}
+                <div className="flex flex-col w-full gap-6 lg:gap-10 lg:hidden">
+                  <div className="h-[500px] overflow-hidden relative">
                     <Image
-                      src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=940&h=640&fit=crop"
+                      src="/images/sauna.webp"
+                      alt="Sauna"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4 lg:gap-6">
+                    <div className="flex flex-col gap-2">
+                      <p className="font-['Manrope'] font-medium text-[16px] leading-[24px] text-black">SAUNA</p>
+                      <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
+                        Kehangatan yang Menenangkan
+                      </h3>
+                    </div>
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
+                      Sauna menjadi ruang hening untuk memulihkan diri, hangat, sunyi, dan intim. Sebuah jeda sederhana yang membantu tubuh 
+                      bernapas lebih dalam, dan pikiran menjadi lebih jernih.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Pool */}
+                <div className="flex flex-col gap-6 lg:gap-10 w-full lg:w-[470px] lg:ml-auto">
+                  <div className="h-[300px] lg:h-[320px] overflow-hidden relative">
+                    <Image
+                      src="/images/pool.webp"
                       alt="Pool"
                       fill
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-4 lg:gap-6">
                     <div className="flex flex-col gap-2">
                       <p className="font-['Manrope'] font-medium text-[16px] leading-[24px] text-black">KOLAM RENANG</p>
-                      <h3 className="font-['Young_Serif'] font-medium text-[24px] leading-[36px] tracking-[-0.4px] text-[#d95143]">
+                      <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
                         Air, Cahaya, dan Keheningan
                       </h3>
                     </div>
-                    <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
                       Kolam renang terbuka menghadap alam, dikelilingi lanskap hijau yang menenangkan. Di sini, setiap pagi terasa lebih segar, 
                       dan sore berjalan lebih lambat sehingga mengundang Anda untuk menikmati waktu lebih lama.
                     </p>
@@ -190,12 +236,12 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Right Column - Sauna */}
-              <div className="flex flex-col w-[410px]">
+              {/* Right Column - Sauna - Desktop only */}
+              <div className="hidden lg:flex flex-col w-[410px]">
                 <div className="flex flex-col gap-10">
                   <div className="h-[600px] overflow-hidden relative">
                     <Image
-                      src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=820&h=1200&fit=crop"
+                      src="/images/sauna.webp"
                       alt="Sauna"
                       fill
                       className="object-cover"
@@ -220,24 +266,24 @@ export default function Home() {
         </section>
 
         {/* Package Section */}
-        <section className="bg-[#f9f6f1] py-20 px-20">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
+        <section className="bg-[#f9f6f1] py-10 lg:py-20 px-6 lg:px-20">
+          <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-20">
             {/* Header */}
-            <div className="flex flex-col gap-10 items-center text-center">
-              <h2 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-black">
+            <div className="flex flex-col items-center gap-6 text-center lg:gap-10">
+              <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black">
                 Ruang untuk Menetap Lebih Lama
               </h2>
-              <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545] max-w-[700px]">
+              <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
                 Villa De La Tina menghadirkan rangkaian pengalaman menginap yang dirancang dengan ritme yang tenang. 
                 Setiap paket bukan sebuah agenda, melainkan undangan untuk tinggal, merasakan, dan membiarkan hari berjalan apa adanya.
               </p>
             </div>
             
             {/* Packages */}
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6 lg:gap-10">
               {/* Package 1 */}
-              <div className="flex">
-                <div className="h-[750px] w-[700px] relative overflow-hidden">
+              <div className="flex flex-col lg:flex-row">
+                <div className="h-[342px] lg:h-[750px] w-full lg:w-[700px] relative overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1400&h=1500&fit=crop"
                     alt="Private Healing Stay"
@@ -245,12 +291,12 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="bg-[#fbe7e5] w-[340px] p-10 flex flex-col gap-40 justify-center">
-                  <h3 className="font-['Young_Serif'] font-medium text-[24px] leading-[36px] tracking-[-0.4px] text-[#d95143]">
+                <div className="bg-[#fbe7e5] w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-40 justify-center">
+                  <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
                     Private Healing Stay
                   </h3>
                   <div className="flex flex-col gap-6">
-                    <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
                       Sebuah pengalaman menginap yang tenang dan personal, memberi ruang bagi tubuh dan pikiran untuk beristirahat tanpa gangguan. 
                       Dirancang bagi mereka yang mencari keheningan, privasi, dan jeda yang utuh.
                     </p>
@@ -262,13 +308,21 @@ export default function Home() {
               </div>
               
               {/* Package 2 */}
-              <div className="flex">
-                <div className="bg-[#ebe4d4] w-[340px] p-10 flex flex-col gap-40 justify-center">
-                  <h3 className="font-['Young_Serif'] font-medium text-[24px] leading-[36px] tracking-[-0.4px] text-[#d95143]">
+              <div className="flex flex-col lg:flex-row">
+                <div className="h-[342px] lg:h-[750px] w-full lg:w-[700px] relative overflow-hidden lg:order-2">
+                  <Image
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&h=1500&fit=crop"
+                    alt="Wellness Retreat"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="bg-[#ebe4d4] w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-40 justify-center lg:order-1">
+                  <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
                     Wellness Retreat
                   </h3>
                   <div className="flex flex-col gap-6">
-                    <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
                       Rangkaian hari yang dijalani dengan tenang dan digabungkan dengan waktu istirahat, perawatan, dan kehadiran penuh dalam setiap momen. 
                       Sebuah cara lembut untuk kembali pada keseimbangan.
                     </p>
@@ -277,19 +331,11 @@ export default function Home() {
                     </button>
                   </div>
                 </div>
-                <div className="h-[750px] w-[700px] relative overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&h=1500&fit=crop"
-                    alt="Wellness Retreat"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
               </div>
               
               {/* Package 3 */}
-              <div className="flex">
-                <div className="h-[750px] w-[700px] relative overflow-hidden">
+              <div className="flex flex-col lg:flex-row">
+                <div className="h-[342px] lg:h-[750px] w-full lg:w-[700px] relative overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?w=1400&h=1500&fit=crop"
                     alt="Small Group Retreat"
@@ -297,12 +343,12 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="bg-[#fbe7e5] w-[340px] p-10 flex flex-col gap-40 justify-center">
-                  <h3 className="font-['Young_Serif'] font-medium text-[24px] leading-[36px] tracking-[-0.4px] text-[#d95143]">
+                <div className="bg-[#fbe7e5] w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-40 justify-center">
+                  <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
                     Small Group Retreat
                   </h3>
                   <div className="flex flex-col gap-6">
-                    <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#454545]">
+                    <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
                       Untuk kelompok kecil yang ingin berkumpul dalam suasana yang intim dan tenang. Ruang yang memungkinkan kebersamaan tumbuh, 
                       tanpa kehilangan rasa privat dan kedalaman pengalaman.
                     </p>
@@ -314,9 +360,9 @@ export default function Home() {
               </div>
               
               {/* CTA Card */}
-              <div className="bg-[#a8382d] h-[608px] flex items-center justify-end p-20 overflow-hidden relative">
+              <div className="bg-[#a8382d] h-auto lg:h-[608px] flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-end p-6 lg:p-20 overflow-hidden relative gap-10 lg:gap-0">
                 {/* Background Image */}
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[448px] w-[600px] overflow-hidden">
+                <div className="relative lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 h-[342px] lg:h-[448px] w-full lg:w-[600px] overflow-hidden order-1 lg:order-none">
                   <Image
                     src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&h=896&fit=crop"
                     alt="Gentle CTA"
@@ -325,11 +371,11 @@ export default function Home() {
                   />
                 </div>
                 
-                <div className="w-[400px] flex flex-col justify-between z-10 relative">
-                  <h3 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-white mb-40">
+                <div className="w-full lg:w-[400px] flex flex-col gap-6 lg:justify-between z-10 relative order-2 lg:order-none">
+                  <h3 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white lg:mb-40">
                     Setiap pengalaman dirancang personal dan menyesuaikan kebutuhan serta ritme Anda.
                   </h3>
-                  <button className="border-b-[1.5px] border-white pb-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] text-left hover:border-[#d95143] transition-colors">
+                  <button className="border-b-[1.5px] border-white pb-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] text-left hover:border-[#d95143] transition-colors w-fit">
                     Mulai percakapan
                   </button>
                 </div>
@@ -339,22 +385,22 @@ export default function Home() {
         </section>
 
         {/* Gallery Section */}
-        <section className="bg-[#f9f6f1] py-20 px-20">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
-            <h2 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-black text-center">
+        <section className="bg-[#f9f6f1] py-10 lg:py-20 px-6 lg:px-20">
+          <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-20">
+            <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black text-center">
               In Every Moment
             </h2>
             
             {/* Carousel Container */}
-            <div className="flex flex-col gap-10 overflow-hidden">
+            <div className="flex flex-col gap-6 overflow-hidden lg:gap-10">
               {/* Images */}
               <div className="flex gap-4 overflow-hidden">
                 <div 
                   className="flex gap-4 transition-transform duration-500 ease-out"
-                  style={{ transform: `translateX(-${currentSlide * 416}px)` }}
+                  style={{ transform: `translateX(-${currentSlide * slideWidth}px)` }}
                 >
                   {carouselImages.map((item, index) => (
-                    <div key={index} className="relative h-[600px] w-[400px] flex-shrink-0 overflow-hidden">
+                    <div key={index} className="relative h-[470px] lg:h-[600px] w-[320px] lg:w-[400px] flex-shrink-0 overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.alt}
@@ -362,8 +408,8 @@ export default function Home() {
                         className="object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#222222]" />
-                      <div className="absolute bottom-8 left-8">
-                        <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] text-white">
+                      <div className="absolute bottom-6 lg:bottom-8 left-6 lg:left-8">
+                        <p className="font-['Manrope'] font-normal text-[16px] lg:text-[20px] leading-[24px] lg:leading-[30px] text-white">
                           {item.alt}
                         </p>
                       </div>
@@ -373,10 +419,10 @@ export default function Home() {
               </div>
               
               {/* Navigation */}
-              <div className="flex items-center justify-center gap-6 px-40">
+              <div className="flex items-center justify-center gap-6 px-0 lg:px-40">
                 <button 
                   onClick={prevSlide}
-                  className="w-10 h-10 flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity"
+                  className="w-10 h-10 flex items-center justify-center opacity-[0.08] lg:opacity-50 hover:opacity-100 transition-opacity"
                   aria-label="Previous slide"
                 >
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -388,7 +434,7 @@ export default function Home() {
                 </p>
                 <button 
                   onClick={nextSlide}
-                  className="w-10 h-10 flex items-center justify-center hover:opacity-80 transition-opacity"
+                  className="flex items-center justify-center w-10 h-10 transition-opacity hover:opacity-80"
                   aria-label="Next slide"
                 >
                   <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -401,9 +447,9 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="bg-[#a8382d] h-[608px] flex items-center justify-end p-20 overflow-hidden relative">
+        <section className="bg-[#a8382d] h-auto lg:h-[608px] flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-end p-6 pt-20 lg:p-20 overflow-hidden relative gap-10 lg:gap-0">
           {/* Background Image */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[448px] w-[600px] overflow-hidden">
+          <div className="relative lg:absolute lg:left-0 lg:top-1/2 lg:-translate-y-1/2 h-[400px] lg:h-[448px] w-full lg:w-[600px] overflow-hidden order-1 lg:order-none">
             <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=896&fit=crop"
               alt="Begin Your Stay"
@@ -412,12 +458,12 @@ export default function Home() {
             />
           </div>
           
-          <div className="w-[400px] flex flex-col gap-40 z-10 relative">
-            <h3 className="font-['Young_Serif'] font-semibold text-[40px] leading-[48px] tracking-[-1px] text-white">
+          <div className="w-full lg:w-[400px] flex flex-col gap-10 lg:gap-40 z-10 relative order-2 lg:order-none pb-6 lg:pb-0">
+            <h3 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white">
               Begin Your Stay
             </h3>
-            <div className="flex flex-col gap-4">
-              <p className="font-['Manrope'] font-normal text-[20px] leading-[30px] tracking-[-0.4px] text-[#f6f6f6]">
+            <div className="flex flex-col gap-6 lg:gap-4">
+              <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#f6f6f6]">
                 Setiap perjalanan dimulai dengan percakapan. Kami dengan senang hati membantu Anda menemukan cara terbaik untuk menikmati waktu 
                 di Villa De La Tina sesuai ritme dan kebutuhan Anda.
               </p>
@@ -429,14 +475,14 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-[#a8382d] py-20 px-40">
-          <div className="max-w-[1200px] mx-auto flex flex-col gap-40">
+        <footer className="bg-[#a8382d] py-10 lg:py-20 px-10 lg:px-40">
+          <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-40">
             {/* Footer Content */}
             <div className="flex flex-col gap-10">
-              <div className="h-px w-[880px] bg-white/20" />
-              <div className="flex gap-20 justify-center">
+              <div className="h-px w-full lg:w-[880px] bg-white/20" />
+              <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 lg:justify-center">
                 {/* Explore */}
-                <div className="flex flex-col gap-4 w-[240px]">
+                <div className="flex flex-col gap-4 w-full lg:w-[240px]">
                   <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Explore</p>
                   <div className="flex flex-col gap-2">
                     <Link href="/penginapan" className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f9f6f1] hover:text-white transition-colors">
@@ -449,7 +495,7 @@ export default function Home() {
                 </div>
                 
                 {/* Beyond the Stay */}
-                <div className="flex flex-col gap-4 w-[240px]">
+                <div className="flex flex-col gap-4 w-full lg:w-[240px]">
                   <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Beyond the Stay</p>
                   <div className="flex flex-col gap-2">
                     <Link href="/twc" className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f9f6f1] hover:text-white transition-colors">
@@ -462,7 +508,7 @@ export default function Home() {
                 </div>
                 
                 {/* Location & Contact */}
-                <div className="flex flex-col gap-10 w-[240px]">
+                <div className="flex flex-col gap-10 w-full lg:w-[240px]">
                   <div className="flex flex-col gap-4">
                     <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Lokasi</p>
                     <div className="font-['Young_Serif'] font-medium text-[16px] leading-[24px] text-[#f9f6f1]">
