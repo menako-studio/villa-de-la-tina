@@ -14,6 +14,7 @@ import {
   HeartIcon,
   UserIcon
 } from '@heroicons/react/24/outline';
+import { Header } from '@/components';
 import { format } from 'date-fns';
 import { id } from 'date-fns/locale';
 import { Training } from '@/types';
