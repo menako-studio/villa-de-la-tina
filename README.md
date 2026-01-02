@@ -119,17 +119,44 @@ GOOGLE_SERVICE_ACCOUNT_KEY=
 
 ## Deployment
 ```bash
-# Build & deploy to Firebase Hosting
+# Build & test locally first
 npm run build
+
+# Deploy to Firebase Hosting
 npm run firebase:deploy
 ```
 
+## Development Workflow
+
+### Making Changes
+1. Create a new branch for your feature
+2. Make your changes
+3. Run tests manually (optional): `npm run test:pre-commit`
+4. Commit changes: `git commit -m "your message"`
+   - ✅ Pre-commit hook will run automatically (lint + type-check)
+5. Push to repository: `git push`
+   - ✅ Pre-push hook will run automatically (build test)
+
+### Hooks Automatically Run
+- **Pre-commit**: Lint + Type Check
+- **Pre-push**: Build Test
+
+If any test fails, the commit/push will be blocked until you fix the errors.
+
+📚 **Full workflow guide**: [GIT_WORKFLOW.md](GIT_WORKFLOW.md)
+
+## Documentation
+- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) - Detailed project structure
+- [GIT_WORKFLOW.md](GIT_WORKFLOW.md) - Git workflow & testing guide
+
 ## Features Roadmap
-- [ ] Landing page design
-- [ ] Training listing with filters
-- [ ] Training detail pages
+- [x] Landing page design
+- [x] Facilities & packages showcase
+- [x] Gallery
+- [x] Blog structure
+- [x] Admin CMS for content management
+- [x] Automated testing with git hooks
 - [ ] Google Calendar integration
-- [ ] Admin CMS for content management
 - [ ] User authentication
-- [ ] Booking system (future)
-- [ ] Payment integration (future)
+- [ ] Booking system
+- [ ] Payment integration
