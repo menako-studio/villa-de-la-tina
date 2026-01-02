@@ -4,33 +4,33 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="max-w-[1200px] mx-auto px-6 py-4 lg:px-[60px] flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8 md:py-5 py-4 lg:px-[60px] flex items-center justify-between">
         {/* Left Links - Hidden on mobile */}
-        <div className="items-center hidden gap-6 lg:flex">
-          <Link href="/penginapan" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
+        <div className="items-center hidden gap-6 md:gap-8 md:flex lg:gap-6 lg:flex">
+          <Link href="/penginapan" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             Penginapan
           </Link>
-          <Link href="/event-venue" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
+          <Link href="/event-venue" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             Event & Venue
           </Link>
         </div>
         
         {/* Logo */}
         <div className="text-center">
-          <p className="font-['Manrope'] font-semibold text-[24px] leading-[36px] text-[#222]">
+          <p className="font-['Manrope'] font-semibold text-[20px] md:text-[24px] leading-[30px] md:leading-[36px] text-[#222]">
             Villa De La Tina
           </p>
-          <p className="font-['Manrope'] font-medium text-[16px] leading-[24px] text-[#222]">
+          <p className="font-['Manrope'] font-medium text-[14px] md:text-[16px] leading-[21px] md:leading-[24px] text-[#222]">
             Kuningan
           </p>
         </div>
         
         {/* Right Links - Hidden on mobile */}
-        <div className="items-center hidden gap-6 lg:flex">
-          <Link href="/twc" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
+        <div className="items-center hidden gap-6 md:gap-8 md:flex lg:gap-6 lg:flex">
+          <Link href="/twc" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             TWC
           </Link>
-          <Link href="/about" className="text-[#222] font-['Manrope'] font-medium text-[18px] hover:text-[#d95143] transition-colors">
+          <Link href="/about" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             Tentang Kami
           </Link>
         </div>

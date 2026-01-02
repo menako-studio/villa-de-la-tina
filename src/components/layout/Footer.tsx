@@ -14,14 +14,14 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#a8382d] py-10 lg:py-20 px-10 lg:px-40">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-40">
+    <footer className="bg-[#a8382d] py-10 md:py-16 lg:py-20 px-6 md:px-8 lg:px-40">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-40">
         {/* Footer Content */}
         <div className="flex flex-col gap-10">
           <div className="h-px w-full lg:w-[880px] bg-white/20" />
-          <div className="flex flex-col gap-10 lg:flex-row lg:gap-20 lg:justify-center">
+          <div className="flex flex-col gap-10 md:gap-12 md:flex-row md:gap-8 lg:gap-20 lg:justify-center">
             {/* Explore */}
-            <div className="flex flex-col gap-4 w-full lg:w-[240px]">
+            <div className="flex flex-col gap-4 w-full md:w-[240px]">
               <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Explore</p>
               <div className="flex flex-col gap-2">
                 {footerLinks.explore.map((link) => (
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
             
             {/* Beyond the Stay */}
-            <div className="flex flex-col gap-4 w-full lg:w-[240px]">
+            <div className="flex flex-col gap-4 w-full md:w-[240px]">
               <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Beyond the Stay</p>
               <div className="flex flex-col gap-2">
                 {footerLinks.beyondStay.map((link) => (
@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
             
             {/* Location & Contact */}
-            <div className="flex flex-col gap-10 w-full lg:w-[240px]">
+            <div className="flex flex-col gap-10 md:gap-8 w-full md:w-[240px]">
               <div className="flex flex-col gap-4">
                 <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Lokasi</p>
                 <div className="font-['Young_Serif'] font-medium text-[16px] leading-[24px] text-[#f9f6f1]">

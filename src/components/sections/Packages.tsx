@@ -29,21 +29,21 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section className="bg-[#f9f6f1] py-10 lg:py-20 px-6 lg:px-20">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-20">
+    <section className="bg-[#f9f6f1] py-10 md:py-16 lg:py-20 px-6 md:px-8 lg:px-20">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
         {/* Header */}
-        <div className="flex flex-col items-center gap-6 text-center lg:gap-10">
-          <h2 className="font-['Young_Serif'] text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black">
+        <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10 text-center">
+          <h2 className="font-['Young_Serif'] text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-black">
             Ruang untuk Menetap Lebih Lama
           </h2>
-          <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
+          <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
             Villa De La Tina menghadirkan rangkaian pengalaman menginap yang dirancang dengan ritme yang tenang. 
             Setiap paket bukan sebuah agenda, melainkan undangan untuk tinggal, merasakan, dan membiarkan hari berjalan apa adanya.
           </p>
         </div>
         
         {/* Packages */}
-        <div className="flex flex-col gap-6 lg:gap-10">
+        <div className="flex flex-col gap-6 md:gap-8 lg:gap-10">
           {packages.map((pkg, index) => (
             <PackageCard key={index} {...pkg} />
           ))}

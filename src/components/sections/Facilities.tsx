@@ -31,28 +31,28 @@ const facilities = [
 
 export default function Facilities() {
   return (
-    <section className="bg-[#f9f6f1] py-10 lg:py-20 px-6 lg:px-20">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:gap-20">
+    <section className="bg-[#f9f6f1] py-10 md:py-16 lg:py-20 px-6 md:px-8 lg:px-20">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
         {/* Header */}
-        <div className="flex flex-col items-center gap-6 text-center lg:gap-10">
-          <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-black">
+        <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10 text-center">
+          <h2 className="font-['Young_Serif'] font-semibold text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-black">
             Dirancang untuk Memulihkan dan<br className="hidden lg:block" /> Dijalani dengan Tenang
           </h2>
-          <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
+          <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
             Di Villa De La Tina, fasilitas bukan sekadar pelengkap. Ia hadir sebagai bagian dari pengalaman yang menyatu dengan alam, 
             menyelaraskan tubuh dan pikiran, tanpa perlu berlebihan.
           </p>
         </div>
         
         {/* Facilities Grid */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-8 lg:gap-20">
           {/* Left Column */}
-          <div className="flex flex-col gap-10 lg:gap-20 w-full lg:w-[550px]">
+          <div className="flex flex-col gap-10 md:gap-8 lg:gap-20 w-full md:w-[50%] lg:w-[550px]">
             {/* SPA */}
             <FacilityCard {...facilities[0]} />
             
             {/* Sauna - Mobile order */}
-            <div className="lg:hidden">
+            <div className="md:hidden">
               <FacilityCard {...facilities[1]} />
             </div>
 
@@ -60,8 +60,8 @@ export default function Facilities() {
             <FacilityCard {...facilities[2]} />
           </div>
           
-          {/* Right Column - Sauna - Desktop only */}
-          <div className="hidden lg:flex flex-col w-[410px]">
+          {/* Right Column - Sauna - Tablet and Desktop only */}
+          <div className="hidden md:flex flex-col md:w-[50%] lg:w-[410px]">
             <FacilityCard {...facilities[1]} />
           </div>
         </div>
