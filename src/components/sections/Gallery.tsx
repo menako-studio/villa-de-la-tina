@@ -41,7 +41,7 @@ export default function Gallery() {
         </h2>
         
         {/* Carousel Container */}
-        <div className="flex flex-col gap-6 md:gap-8 overflow-hidden lg:gap-10">
+        <div className="flex flex-col gap-6 overflow-hidden md:gap-8 lg:gap-10">
           {/* Images */}
           <div className="flex gap-4 overflow-hidden">
             <div 
@@ -68,23 +68,27 @@ export default function Gallery() {
           </div>
           
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-6 px-0 lg:px-40">
+          <div className="flex items-center gap-6 px-0 lg:px-40">
             <button 
               onClick={prevSlide}
               className="w-10 h-10 flex items-center justify-center opacity-[0.08] lg:opacity-50 hover:opacity-100 transition-opacity"
               aria-label="Previous slide"
+              disabled={currentSlide === 0}
+              style={currentSlide === 0 ? { cursor: 'not-allowed', opacity: 0.3 } : {}}
             >
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
                 <path d="M18.75 22.5L11.25 15L18.75 7.5" stroke="#8c3128" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             <p className="font-['Young_Serif'] font-semibold text-[24px] leading-[36px] text-[#ebe4d4]">
-              {currentSlide + 1} / {carouselImages.length}
+               / 
             </p>
             <button 
               onClick={nextSlide}
-              className="flex items-center justify-center w-10 h-10 transition-opacity hover:opacity-80"
+              className={`flex items-center justify-center w-10 h-10 transition-opacity ${currentSlide === carouselImages.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:opacity-80'}`}
               aria-label="Next slide"
+              disabled={currentSlide === carouselImages.length - 1}
+              style={currentSlide === carouselImages.length - 1 ? { pointerEvents: 'none' } : {}}
             >
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
                 <path d="M11.25 7.5L18.75 15L11.25 22.5" stroke="#8c3128" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
