@@ -25,10 +25,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Villa De La Tina - A Private Retreat in the Heart of Nature</title>
+        <title>Villa De La Tina – Penginapan & Villa Healing Terbaik di Kuningan</title>
         <meta 
           name="description" 
-          content="Villa De La Tina adalah ruang tinggal yang tenang dan intim, dikelilingi lanskap alami Kuningan. Dirancang untuk mereka yang menghargai ketenangan, ruang, dan waktu yang berjalan lebih pelan." 
+          content="Cari villa di Kuningan dengan kolam renang privat dan suasana asri? Villa De La Tina ideal untuk retreat, gathering, workshop, dan liburan keluarga. Booking sekarang!" 
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
