@@ -7,7 +7,7 @@ const footerLinks = {
     { href: '/event-venue', label: 'Event & Venue' }
   ],
   beyondStay: [
-    { href: '/twc', label: 'Tina Wiryawati Center' },
+    { href: '/tina-wiryawati-center', label: 'Tina Wiryawati Center' },
     { href: '/tentang-kami', label: 'Tentang Kami' }
   ]
 };
@@ -18,8 +18,8 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-40">
         {/* Footer Content */}
         <div className="flex flex-col gap-10">
-          <div className="h-px w-full lg:w-[880px] bg-white/20" />
-          <div className="flex flex-col gap-10 md:gap-12 md:flex-row md:gap-8 lg:gap-20 lg:justify-center">
+          <div className="w-full h-px bg-white/20" />
+          <div className="flex flex-col gap-10 md:gap-12 md:flex-row md:gap-8 lg:gap-20 lg:justify-between">
             {/* Explore */}
             <div className="flex flex-col gap-4 w-full md:w-[240px]">
               <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Explore</p>
@@ -83,8 +83,8 @@ export default function Footer() {
         
         {/* Copyright */}
         <div>
-          <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">
-            Copyright © Villa de La Tina 2026
+          <p className="font-['Manrope'] text-center font-medium text-[14px] leading-[21px] text-[#f3b4ae]">
+            Copyright © Villa De La Tina 2026
           </p>
         </div>
       </div>
