@@ -14,10 +14,10 @@ import Link from 'next/link';
 // ===== Typography Classes =====
 const TYPOGRAPHY = {
   label: 'text-[#a8382d] text-xs md:text-sm font-semibold tracking-tight uppercase',
-  h1: 'text-[#222] text-[38px] md:text-5xl lg:text-[56px] font-bold leading-tight md:leading-[1.2] lg:leading-[1.2] tracking-tight',
+  h1: "font-['Young_Serif'] text-[#222] text-[38px] md:text-5xl lg:text-[56px] leading-tight md:leading-[1.2] lg:leading-[1.2] tracking-tight",
   h2: 'text-black text-2xl md:text-[30px] lg:text-[32px] font-semibold leading-tight tracking-tight',
-  h2Dark: 'text-white text-[28px] md:text-4xl lg:text-[40px] font-bold leading-tight tracking-tight',
-  h2Center: 'text-black text-[28px] md:text-4xl lg:text-[40px] font-bold text-center tracking-tight',
+  h2Dark: "font-['Young_Serif'] text-white text-[28px] md:text-4xl lg:text-[40px] leading-tight tracking-tight",
+  h2Center: "font-['Young_Serif'] text-black text-[28px] md:text-4xl lg:text-[40px] text-center tracking-tight",
   body: 'text-[#454545] text-base md:text-lg leading-relaxed',
   bodyLarge: 'text-[#454545] text-base md:text-lg lg:text-xl leading-relaxed',
   bodyLight: 'text-[#d1d1d1] text-base md:text-lg leading-relaxed',
@@ -58,23 +58,24 @@ function FAQItemComponent({ item, index, isOpen, onToggle }: FAQItemProps) {
       onClick={onToggle}
     >
       <div className="flex items-center w-full gap-20 md:gap-20">
-        <p className="flex-1 text-[#a8382d] text-xl md:text-2xl lg:text-2xl text-left leading-relaxed">
+        <p className="font-['Young_Serif'] flex-1 text-[#a8382d] text-xl md:text-2xl lg:text-2xl text-left leading-relaxed">
           {item.question}
         </p>
         <div className="relative flex-shrink-0 w-10 h-10 overflow-hidden">
           <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
             <div className="bg-[#a8382d] h-0.5 w-6" />
           </div>
-          <div className={`absolute transition-transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 ${isOpen ? 'rotate-90' : ''}`}>
+          <div className={`absolute transition-transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 ${isOpen ? 'rotate-90' : ''}`}> 
             <div className="bg-[#a8382d] h-0.5 w-6 rotate-90" />
           </div>
         </div>
       </div>
       {isOpen && (
         <div className="w-full mt-2">
-          <div className="text-[#454545] text-left md:text-lg rounded-lg px-5 py-4">
-            {item.answer}
-          </div>
+          <div
+            className="text-[#454545] text-left md:text-lg rounded-lg"
+            dangerouslySetInnerHTML={{ __html: item.answer }}
+          />
         </div>
       )}
     </button>
@@ -117,11 +118,11 @@ const faqItems: FAQItem[] = [
     },
     {
       question: 'Apakah Villa De La Tina menerima booking jangka pendek maupun jangka panjang?',
-      answer: 'Villa De La Tina menerima pemesanan mulai dari satu malam hingga beberapa hari, menyesuaikan kebutuhan menginap, liburan, retreat, atau kegiatan lainnya.'
+      answer: 'Villa De La Tina menerima pemesanan mulai dari <strong>satu malam hingga beberapa hari</strong>, menyesuaikan kebutuhan menginap, liburan, retreat, atau kegiatan lainnya.'
     },
     {
       question: 'Di mana lokasi Villa De La Tina?',
-      answer: 'Villa De La Tina berlokasi di Desa Puncak, Kabupaten Kuningan, Jawa Barat, dikelilingi alam yang hijau, udara sejuk, dan suasana yang tenang.'
+      answer: 'Villa De La Tina berlokasi di <strong>Desa Puncak, Kabupaten Kuningan, Jawa Barat</strong>, dikelilingi alam yang hijau, udara sejuk, dan suasana yang tenang.'
     }
   ];
 
@@ -137,10 +138,10 @@ function FAQSection({ items, openFaq, onToggle }: {
 }) {
   return (
     <section className="bg-[#f9f6f1] flex flex-col items-center overflow-hidden">
-      <div className={`bg-[#f9f6f1] flex flex-col gap-10 items-start p-6 md:p-10 lg:p-20 w-full ${LAYOUTS.maxWidth}`}>
+      <div className={`bg-[#f9f6f1] flex flex-col gap-10 p-6 md:p-10 lg:p-20 w-full ${LAYOUTS.maxWidth}`}>
         <h2 className={TYPOGRAPHY.h2Center}>FAQ</h2>
         <div className="flex flex-col items-center w-full gap-6 mx-auto md:max-w-4xl">
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <FAQItemComponent
               key={index}
               item={item}
