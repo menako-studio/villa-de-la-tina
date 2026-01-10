@@ -15,7 +15,7 @@ export default function FinalCTA() {
       </div>
       
       <div className="w-full md:w-[320px] lg:w-[400px] flex flex-col gap-10 md:gap-20 lg:gap-40 z-10 relative order-2 md:order-none pb-6 md:pb-0">
-        <h3 className="font-['Young_Serif'] font-semibold text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-white">
+        <h3 className="font-['Young_Serif'] text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-white">
           Begin Your Stay
         </h3>
         <div className="flex flex-col gap-6 md:gap-5 lg:gap-4">
