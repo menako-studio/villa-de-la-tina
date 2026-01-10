@@ -10,13 +10,35 @@ import { TYPOGRAPHY, LAYOUTS } from './constants';
 export function TWCBridgingSection() {
   return (
     <section className="bg-[#f9f6f1] flex flex-col items-center justify-end overflow-hidden p-6 md:p-10 lg:p-20">
-      <div className={`flex flex-col items-center w-full gap-20 ${LAYOUTS.maxWidth} md:flex-row md:items-start`}>
-        <div className="bg-[#dcdcdc] h-[400px] md:h-[592px] overflow-hidden relative w-full md:w-[384px] lg:w-[484px] ">
+      <div className={`flex flex-col items-center w-full gap-10 lg:gap-20 ${LAYOUTS.maxWidth} md:flex-row md:items-start`}>
+        {/* Mobile: show desktop image, but keep aspect ratio */}
+        <div className="bg-[#dcdcdc] h-[400px] overflow-hidden relative w-full md:hidden">
           <Image
             src="/images/tentang-kami/tina-wiryawati.webp"
             alt="Tina Wiryawati Center"
             fill
             quality={100}
+            className="object-cover"
+          />
+        </div>
+        {/* Tablet: show tablet image */}
+        <div className="bg-[#dcdcdc] h-[592px] overflow-hidden relative w-full hidden md:block lg:hidden md:w-[384px]">
+          <Image
+            src="/images/tentang-kami/tina-wiryawati-tablet.webp"
+            alt="Tina Wiryawati Center"
+            fill
+            quality={100}
+            className="object-cover"
+          />
+        </div>
+        {/* Desktop: show desktop image */}
+        <div className="bg-[#dcdcdc] h-[592px] overflow-hidden relative w-full hidden lg:block lg:w-[484px]">
+          <Image
+            src="/images/tentang-kami/tina-wiryawati.webp"
+            alt="Tina Wiryawati Center"
+            fill
+            quality={100}
+            className="object-cover"
           />
         </div>
         <div className="flex flex-col items-start flex-1 gap-10">
