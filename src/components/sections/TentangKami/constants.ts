@@ -7,7 +7,7 @@ export const TYPOGRAPHY = {
   h1: "font-['Young_Serif'] text-[#222] text-[38px] md:text-5xl lg:text-[56px] leading-tight md:leading-[1.2] lg:leading-[1.2] tracking-tight",
   h2: 'text-black text-2xl md:text-[30px] lg:text-[32px] font-semibold leading-tight tracking-tight',
   h2Dark: "font-['Young_Serif'] text-white text-[28px] md:text-4xl lg:text-[40px] leading-tight tracking-tight",
-  h2Center: "font-['Young_Serif'] text-black text-[28px] md:text-4xl lg:text-[40px] text-center tracking-tight",
+  h2Center: "font-['Young_Serif'] text-black text-[28px] md:text-4xl lg:text-[40px] tracking-tight",
   body: 'text-[#454545] text-base md:text-lg leading-relaxed',
   bodyLarge: 'text-[#454545] text-base md:text-lg lg:text-xl leading-relaxed',
   bodyLight: 'text-[#d1d1d1] text-base md:text-lg leading-relaxed',
