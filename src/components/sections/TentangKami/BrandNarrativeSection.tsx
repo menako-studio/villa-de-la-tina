@@ -24,7 +24,31 @@ export function BrandNarrativeSection() {
           </div>
         </div>
       </div>
-      <div className="h-[750px] overflow-hidden relative w-full">
+      
+      {/* Mobile Image */}
+      <div className="h-[750px] overflow-hidden relative w-full md:hidden">
+        <Image
+          src="/images/tentang-kami/tentang-sebuah-ruang-mobile.webp"
+          alt="Villa De La Tina"
+          fill
+          className="object-cover"
+          quality={100}
+        />
+      </div>
+
+      {/* Tablet Image */}
+      <div className="h-[750px] overflow-hidden relative w-full hidden md:block lg:hidden">
+        <Image
+          src="/images/tentang-kami/tentang-sebuah-ruang-tablet.webp"
+          alt="Villa De La Tina"
+          fill
+          className="object-cover"
+          quality={100}
+        />
+      </div>
+
+      {/* Desktop Image */}
+      <div className="h-[750px] overflow-hidden relative w-full hidden lg:block">
         <Image
           src="/images/tentang-kami/tentang-sebuah-ruang.webp"
           alt="Villa De La Tina"
