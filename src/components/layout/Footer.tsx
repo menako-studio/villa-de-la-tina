@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 const footerLinks = {
   explore: [
-    { href: '/penginapan', label: 'Penginapan' },
+    { href: '/', label: 'Penginapan' },
     { href: '/event-venue', label: 'Event & Venue' }
   ],
   beyondStay: [
     { href: '/twc', label: 'Tina Wiryawati Center' },
-    { href: '/about', label: 'Tentang Kami' }
+    { href: '/tentang-kami', label: 'Tentang Kami' }
   ]
 };
 
@@ -61,6 +61,14 @@ export default function Footer() {
                   <p>Kuningan, Jawa Barat</p>
                   <p>Indonesia</p>
                 </div>
+                <a
+                  href="https://maps.app.goo.gl/SEvwq3nwWt8eeGmr9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white font-['Manrope'] font-medium text-[14px] leading-[21px] text-white px-6 py-2 hover:bg-white/10 transition-colors inline-block mt-2 w-fit"
+                >
+                  Google map
+                </a>
               </div>
               <div className="flex flex-col gap-4">
                 <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Kontak</p>
