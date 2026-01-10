@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FinalCTA } from '@/components';
+import Link from 'next/link';
 
 /**
  * Tentang Kami Page
@@ -233,7 +234,7 @@ export default function TentangKami() {
               </p>
             </div>
             <div className="hidden md:flex flex-col items-start w-full md:w-[330px] lg:w-[536px]">
-              <div className="h-[712px] lg:h-[737px] overflow-hidden relative w-full rounded-lg">
+              <div className="h-[712px] lg:h-[737px] overflow-hidden relative w-full ">
                 <Image
                   src="/images/tentang-kami/tentang-awal.webp"
                   alt="Gathering at Villa"
@@ -245,7 +246,7 @@ export default function TentangKami() {
             </div>
           </div>
           <div className="flex flex-col items-center w-full mx-auto mt-10 max-w-7xl">
-            <div className="h-[400px] overflow-hidden relative w-full md:max-w-[550px] rounded-lg">
+            <div className="h-[400px] overflow-hidden relative w-full md:max-w-[550px] ">
                <Image
                   src="/images/tentang-kami/tentang-awal-2.webp"
                   alt="Gathering at Villa"
@@ -274,7 +275,7 @@ export default function TentangKami() {
               </div>
             </div>
           </div>
-          <div className="h-[550px] overflow-hidden relative w-full">
+          <div className="h-[750px] overflow-hidden relative w-full">
             <Image
               src="/images/tentang-kami/tentang-sebuah-ruang.webp"
               alt="Villa De La Tina"
@@ -287,8 +288,8 @@ export default function TentangKami() {
 
         {/* TWC Bridging Section */}
         <section className="bg-[#f9f6f1] flex flex-col items-center justify-end overflow-hidden p-6 md:p-10 lg:p-20">
-          <div className={`flex flex-col items-center w-full gap-10 ${LAYOUTS.maxWidth} md:flex-row md:items-start`}>
-            <div className="bg-[#dcdcdc] h-[400px] md:h-[592px] overflow-hidden relative w-full md:w-[384px] lg:w-[484px] rounded-lg">
+          <div className={`flex flex-col items-center w-full gap-20 ${LAYOUTS.maxWidth} md:flex-row md:items-start`}>
+            <div className="bg-[#dcdcdc] h-[400px] md:h-[592px] overflow-hidden relative w-full md:w-[384px] lg:w-[484px] ">
             
               <Image
                 src="/images/tentang-kami/tina-wiryawati.webp"
@@ -315,12 +316,14 @@ export default function TentangKami() {
                   Bukan sebagai pencapaian, melainkan sebagai pengingat bahwa setiap langkah selalu dimulai dari kehadiran.
                 </p>
               </div>
+              <Link href="/tina-wiryawati-center" className="w-fit"> 
               <button className="bg-[#d95143] flex gap-2 items-center justify-center px-5 py-3 text-white font-medium text-base hover:bg-[#c44537] transition-colors">
                 Jelajahi Tina Wiryawati Center
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
+              </Link>
             </div>
           </div>
         </section>
