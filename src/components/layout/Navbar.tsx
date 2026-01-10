@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 md:py-5 py-4 lg:px-[60px] flex items-center justify-between">
         {/* Left Links - Hidden on mobile */}
         <div className="items-center hidden gap-6 md:gap-8 md:flex lg:gap-6 lg:flex">
-          <Link href="/penginapan" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
+          <Link href="/" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             Penginapan
           </Link>
           <Link href="/event-venue" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
@@ -30,7 +30,7 @@ export default function Navbar() {
           <Link href="/twc" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             TWC
           </Link>
-          <Link href="/about" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
+          <Link href="/tentang-kami" className="text-[#222] font-['Manrope'] font-medium text-[16px] md:text-[18px] hover:text-[#d95143] transition-colors">
             Tentang Kami
           </Link>
         </div>

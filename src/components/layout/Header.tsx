@@ -11,7 +11,7 @@ export default function Header() {
     { name: 'Beranda', href: '/' },
     { name: 'Pelatihan', href: '/trainings' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Tentang Kami', href: '/about' },
+    { name: 'Tentang Kami', href: '/' },
   ];
 
   return (
