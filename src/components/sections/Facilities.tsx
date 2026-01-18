@@ -7,25 +7,41 @@ const facilities = [
     alt: 'Spa',
     category: 'SPA',
     title: 'Sebuah Ritual untuk Kembali Seimbang',
-    description: 'Di ruang spa yang tenang dan tertutup, waktu seolah melambat. Sentuhan perawatan dilakukan dengan ritme yang lembut, memberi kesempatan bagi tubuh untuk benar-benar beristirahat dan melepaskan lelah yang tertinggal.'
+    description: 'Ruang perawatan yang sunyi dan tertutup, tempat tubuh diberi waktu untuk beristirahat sepenuhnya. Setiap sentuhan dilakukan dengan perhatian dan ketenangan.'
   },
   {
     image: '/images/sauna.webp',
     alt: 'Sauna',
     category: 'SAUNA',
     title: 'Kehangatan yang Menenangkan',
-    description: 'Sauna menjadi ruang hening untuk memulihkan diri, hangat, sunyi, dan intim. Sebuah jeda sederhana yang membantu tubuh bernapas lebih dalam, dan pikiran menjadi lebih jernih.',
-    imageHeight: 'h-[500px] lg:h-[600px]'
+    description: 'Ruang hening untuk melepas penat, menghangatkan tubuh, dan menjernihkan pikiran, tanpa gangguan, tanpa agenda.',
+    imageHeight: 'h-[400px] md:h-[400px] lg:h-[500px]'
   },
   {
     image: '/images/pool.webp',
     alt: 'Pool',
     category: 'KOLAM RENANG',
     title: 'Air, Cahaya, dan Keheningan',
-    description: 'Kolam renang terbuka menghadap alam, dikelilingi lanskap hijau yang menenangkan. Di sini, setiap pagi terasa lebih segar, dan sore berjalan lebih lambat sehingga mengundang Anda untuk menikmati waktu lebih lama.',
-    imageHeight: 'h-[300px] lg:h-[320px]',
-    containerWidth: 'w-full lg:w-[470px]',
-    marginLeft: 'lg:ml-auto'
+    description: 'Kolam renang terbuka yang menghadap lanskap hijau. Pagi terasa lebih segar, sore berjalan lebih lambat.',
+    imageHeight: 'h-[280px] md:h-[280px] lg:h-[320px]',
+    containerWidth: 'w-full md:w-full lg:w-[470px]',
+    marginLeft: 'md:ml-0 lg:ml-auto'
+  },
+  {
+    image: '/images/moment-of-leisure.webp',
+    alt: 'Moments of Leisure',
+    category: 'MOMENTS OF LEISURE',
+    title: 'Ruang untuk Berkumpul dan Menikmati Waktu',
+    description: 'Ketika hari bergeser ke malam, ruang berubah menjadi tempat berkumpul. Api yang menyala perlahan, tawa yang mengisi udara, dan waktu yang dibiarkan mengalir apa adanya.',
+    imageHeight: 'h-[300px] md:h-[300px] lg:h-[400px]'
+  },
+  {
+    image: '/images/cabin.webp',
+    alt: 'Cabin',
+    category: 'CABIN',
+    title: 'Ruang Tinggal yang Lebih Intim',
+    description: 'Cabin di Villa De La Tina menawarkan pengalaman menginap yang lebih personal, terpisah, tenang, dan dekat dengan alam. Sebuah pilihan bagi mereka yang menginginkan privasi yang lebih dalam.',
+    imageHeight: 'h-[500px] md:h-[500px] lg:h-[600px]'
   }
 ];
 
@@ -35,33 +51,35 @@ export default function Facilities() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
         {/* Header */}
         <div className="flex flex-col items-center gap-6 text-center md:gap-8 lg:gap-10">
-          <h2 className="font-['Young_Serif'] font-semibold text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-black">
-            Fasilitas Villa De La Tina
+          <h2 className="font-['Young_Serif'] font-semibold text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black">
+            Dirancang untuk Memulihkan dan<br />Dijalani dengan Tenang
           </h2>
           <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
-            Kami menyediakan fasilitas lengkap untuk memastikan pengalaman menginap Anda lebih istimewa.
+            Di Villa De La Tina, setiap fasilitas hadir sebagai bagian dari pengalaman tinggal. Sebagai salah satu penginapan di Kuningan yang berfokus pada ketenangan dan pemulihan, ruang-ruang ini dirancang untuk dirasakan, bukan dipamerkan.
           </p>
         </div>
         
         {/* Facilities Grid */}
         <div className="flex flex-col gap-10 md:flex-row md:gap-8 lg:gap-20">
           {/* Left Column */}
-          <div className="flex flex-col gap-10 md:gap-8 lg:gap-20 w-full md:w-[50%] lg:w-[550px]">
+          <div className="flex flex-col gap-10 md:gap-8 lg:gap-10 w-full md:w-[50%] lg:w-[550px]">
             {/* SPA */}
             <FacilityCard {...facilities[0]} />
             
-            {/* Sauna - Mobile order */}
-            <div className="md:hidden">
-              <FacilityCard {...facilities[1]} />
-            </div>
-
             {/* Pool */}
             <FacilityCard {...facilities[2]} />
+            
+            {/* Moments of Leisure */}
+            <FacilityCard {...facilities[3]} />
           </div>
           
-          {/* Right Column - Sauna - Tablet and Desktop only */}
-          <div className="hidden md:flex flex-col md:w-[50%] lg:w-[410px]">
+          {/* Right Column */}
+          <div className="flex flex-col gap-10 md:gap-8 lg:gap-10 w-full md:w-[50%] lg:w-[410px]">
+            {/* Sauna */}
             <FacilityCard {...facilities[1]} />
+            
+            {/* Cabin */}
+            <FacilityCard {...facilities[4]} />
           </div>
         </div>
       </div>

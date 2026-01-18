@@ -33,12 +33,11 @@ export default function Packages() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
         {/* Header */}
         <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10 text-center">
-          <h2 className="font-['Young_Serif'] text-[24px] md:text-[32px] lg:text-[40px] leading-[28.8px] md:leading-[38.4px] lg:leading-[48px] tracking-[-1px] text-black">
+          <h2 className="font-['Young_Serif'] text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black">
             Ruang untuk Menetap Lebih Lama
           </h2>
           <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
-            Villa De La Tina menghadirkan rangkaian pengalaman menginap yang dirancang dengan ritme yang tenang. 
-            Setiap paket bukan sebuah agenda, melainkan undangan untuk tinggal, merasakan, dan membiarkan hari berjalan apa adanya.
+            Sebagai villa healing Kuningan, Villa De La Tina menghadirkan rangkaian pengalaman menginap yang dijalani dengan ritme perlahan. Setiap paket merupakan undangan untuk tinggal lebih lama, merasakan alam, dan memberi waktu pada diri sendiri.
           </p>
         </div>
         

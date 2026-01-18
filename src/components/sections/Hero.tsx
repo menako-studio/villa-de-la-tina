@@ -18,16 +18,22 @@ export default function Hero() {
       </div>
       
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center gap-4 md:gap-6 px-6 md:px-8 max-w-[750px] pb-10 md:pb-8 lg:pb-0">
-        <h1 className="font-['Young_Serif'] font-semibold text-[36px] md:text-[44px] lg:text-[56px] leading-[43.2px] md:leading-[52.8px] lg:leading-[67.2px] tracking-[-2px] text-white text-center">
-          A Private Retreat in<span className="md:inline lg:inline"><br /></span> The Heart of Nature
-        </h1>
-        <div className="flex flex-col items-center w-full gap-6">
-          <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#d1d1d1] text-center">
-    Villa De La Tina adalah penginapan di Kuningan yang menawarkan suasana tenang, privat, dan asri.  Cocok untuk liburan keluarga, acara gathering kantor, reuni, hingga event komunitas dengan suasana sejuk dan nyaman. 
+      <div className="relative z-10 flex flex-col items-center gap-4 md:gap-6 px-6 md:px-20 lg:px-[120px] max-w-full pb-10 md:pb-10 lg:pb-10">
+        {/* Label */}
+        <div className="flex flex-col items-center gap-2">
+          <p className="font-['Manrope'] font-semibold text-[14px] leading-[21px] tracking-[-0.2px] text-white text-center uppercase">
+            VILLA DE LA TINA
           </p>
-          <button className="bg-[#d95143] px-5 py-3 md:px-6 md:py-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] hover:bg-[#a8382d] transition-colors">
-            Booking Villa Sekarang
+          <h1 className="font-['Young_Serif'] font-semibold text-[38px] md:text-[48px] lg:text-[56px] leading-[45.6px] md:leading-[57.6px] lg:leading-[67.2px] tracking-[-2px] text-white text-center max-w-[700px]">
+            A Private Retreat in<br />the Heart of Nature
+          </h1>
+        </div>
+        <div className="flex flex-col items-center w-full max-w-[700px] gap-6">
+          <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#d1d1d1] text-center">
+            Villa De La Tina adalah ruang tinggal yang tenang intim, dan dikelilingi lanskap hijau Kuningan. Dirancang untuk mereka yang menghargai ketenangan, ruang, dan waktu yang berjalan lebih pelan.
+          </p>
+          <button className="bg-[#d95143] px-5 py-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] hover:bg-[#a8382d] transition-colors">
+            Discover the Experience
           </button>
         </div>
       </div>
