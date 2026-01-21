@@ -55,15 +55,20 @@ export function UntoldStorySection() {
         </div>
       </div>
       <div className="flex flex-col items-center w-full mx-auto mt-10 max-w-7xl">
-        <div className="h-[400px] overflow-hidden relative w-full md:max-w-[550px] ">
-          <Image
-            src="/images/tentang-kami/tentang-awal-2.webp"
-            alt="Gathering at Villa"
-            fill
-            className="object-cover"
-            quality={100}
-          />
-        </div>
+          <div className="h-[400px] overflow-hidden relative w-full md:max-w-[550px] ">
+            <video
+              className="object-cover w-full h-full"
+              src="/videos/tracking-1080p.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/images/tentang-kami/tentang-awal-2.webp"
+            >
+              Maaf, browser Anda tidak mendukung video.
+            </video>
+          </div>
       </div>
     </section>
   );

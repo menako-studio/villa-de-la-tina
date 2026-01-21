@@ -20,13 +20,18 @@ export function HeroSection() {
       </div>
       <div className="h-[490px] md:h-[600px] overflow-hidden relative w-full">
         <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/tentang-kami/hero-tentang-kami.webp"
-            alt="Villa De La Tina"
-            fill
-            className="object-cover"
-            priority
-          />
+          <video
+            className="object-cover w-full h-full"
+            src="/videos/aerial-villa.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            poster="/images/tentang-kami/hero-tentang-kami.webp"
+          >
+            Maaf, browser Anda tidak mendukung video.
+          </video>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#222] opacity-50" />
       </div>
