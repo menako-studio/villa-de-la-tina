@@ -13,7 +13,7 @@ export default function AcaraDanVenuePage() {
 
       <div className="bg-[#f9f6f1] min-h-screen">
         {/* Hero Section */}
-        <section className="relative pt-32 md:pt-44 lg:pt-52 pb-6 px-6 md:px-10 lg:px-24">
+        <section className="relative px-6 pt-32 pb-6 md:pt-44 lg:pt-52 md:px-10 lg:px-24">
           <div className="max-w-[700px] mx-auto text-center mb-6 md:mb-6 lg:mb-6">
             <div className="mb-2">
               <p className="font-semibold text-[#a8382d] text-[14px] leading-[21px] tracking-[-0.2px]">
@@ -60,7 +60,7 @@ export default function AcaraDanVenuePage() {
         {/* Outdoor Space Gallery Section */}
         <section className="bg-[#f9f6f1] py-10 md:py-10 lg:py-20 px-6 md:px-10 lg:px-20">
           <div className="max-w-[1040px] mx-auto">
-            <div className="text-center mb-10 md:mb-10 lg:mb-20 space-y-6 md:space-y-10 lg:space-y-10">
+            <div className="mb-10 space-y-6 text-center md:mb-10 lg:mb-20 md:space-y-10 lg:space-y-10">
               <h2 className="font-serif text-[#222] text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px]">
                 Outdoor Space
               </h2>
@@ -137,7 +137,7 @@ export default function AcaraDanVenuePage() {
         {/* Indoor/Semi-Indoor Gallery Section */}
         <section className="bg-[#fdf4f3] py-10 md:py-10 lg:py-20 px-6 md:px-10 lg:px-20">
           <div className="max-w-[1040px] mx-auto">
-            <div className="text-center mb-10 md:mb-10 lg:mb-20 space-y-6 md:space-y-10 lg:space-y-10">
+            <div className="mb-10 space-y-6 text-center md:mb-10 lg:mb-20 md:space-y-10 lg:space-y-10">
               <h2 className="font-serif text-[#222] text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px]">
                 Indoor / Semi-Indoor
               </h2>
@@ -214,14 +214,14 @@ export default function AcaraDanVenuePage() {
         {/* Event Types Section */}
         <section className="bg-[#f9f6f1] py-10 md:py-10 lg:py-20 px-6 md:px-10 lg:px-20">
           <div className="max-w-[1040px] mx-auto">
-            <div className="text-center mb-10 md:mb-10 lg:mb-20">
+            <div className="mb-10 text-center md:mb-10 lg:mb-20">
               <h2 className="font-serif text-[#222] text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px]">
                 Untuk Beragam Momen
               </h2>
             </div>
             
             {/* Event Cards - Mobile: Vertical Stack, Desktop: Horizontal */}
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 md:gap-6 lg:gap-4">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-1 lg:grid-cols-3 md:gap-6 lg:gap-4">
               {/* Card 1: Weddings & Celebration */}
               <div className="flex flex-col">
                 <div className="relative h-[504px] overflow-hidden">
@@ -295,13 +295,13 @@ export default function AcaraDanVenuePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 md:py-10 lg:py-20 px-6 md:px-10 lg:px-20">
+        <section className="relative px-6 py-20 md:py-10 lg:py-20 md:px-10 lg:px-20">
           <div className="relative max-w-[1040px] mx-auto">
             {/* Background */}
             <div className="absolute inset-0 md:inset-y-0 md:right-0 md:left-auto md:w-[calc(100%-40px)] lg:w-[calc(100%-80px)] bg-[#a8382d]" />
             
             {/* Content Container */}
-            <div className="relative flex flex-col md:flex-row lg:flex-row items-end md:items-center lg:items-center gap-10 md:gap-10 lg:gap-10">
+            <div className="relative flex flex-col items-end gap-10 md:flex-row lg:flex-row md:items-center lg:items-center md:gap-10 lg:gap-10">
               {/* Image */}
               <div className="relative w-full md:w-[445px] lg:w-[600px] h-[400px] md:h-[400px] lg:h-[448px] overflow-hidden order-1 md:order-1 lg:order-1">
                 <Image
@@ -313,7 +313,7 @@ export default function AcaraDanVenuePage() {
               </div>
               
               {/* Text Content */}
-              <div className="relative flex-1 space-y-4 md:space-y-4 lg:space-y-4 order-2 md:order-2 lg:order-2 md:pr-10 lg:pr-20">
+              <div className="relative flex-1 order-2 space-y-4 md:space-y-4 lg:space-y-4 md:order-2 lg:order-2 md:pr-10 lg:pr-20">
                 <h2 className="font-serif text-white text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px]">
                   Setiap kegiatan dirancang melalui percakapan
                 </h2>
