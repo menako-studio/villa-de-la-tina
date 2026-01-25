@@ -2,6 +2,8 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import RootLayout from '@/layouts/RootLayout';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/styles/globals.css';
 
 // Optimize font loading with font-display: swap for better PageSpeed
@@ -29,6 +31,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <RootLayout>
         <Component {...pageProps} />
       </RootLayout>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
