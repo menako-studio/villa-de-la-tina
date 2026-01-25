@@ -4,7 +4,7 @@ export default function Intro() {
   return (
     <section className="bg-[#f9f6f1] py-10 md:py-20 lg:py-[168px] px-6 md:px-10 lg:px-20 flex flex-col items-center justify-center">
       <div className="max-w-[1200px] w-full h-[580px] md:h-[580px] lg:h-[584px] flex flex-col gap-20 md:gap-[150px] lg:gap-20 items-center justify-center">
-        <h2 className="font-['Young_Serif'] font-semibold text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black text-center max-w-full">
+        <h2 className="font-['Young_Serif']  text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black text-center max-w-full">
           Di tengah lanskap hijau Kuningan, Villa De La Tina hadir sebagai ruang yang<br className="hidden md:inline lg:inline" /> menyatu dengan alam, tenang, terbuka, dan<br className="hidden lg:inline" /> penuh kehadiran.
         </h2>
         <div className="flex flex-col gap-6 items-start justify-center w-full md:w-full lg:w-[700px]">
