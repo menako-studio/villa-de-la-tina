@@ -1,18 +1,19 @@
+/* 
+  Global Styles - Villa De La Tina
+  Optimized for performance with critical CSS first
+*/
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Adventures Unlimited Script - Custom Font */
+/* Adventures Unlimited Script - Custom Font with preload for performance */
 @font-face {
   font-family: 'Adventures Unlimited Script';
   src: url('https://fonts.cdnfonts.com/s/93848/AdventuresUnlimitedScript.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Ensures text remains visible during font load */
 }
 
 :root {
@@ -22,7 +23,7 @@
   
   /* Villa de Latina Font Families */
   --font-family-primary: 'Young Serif', serif;
-  --font-family-secondary: 'Manrope', sans-serif;
+  --font-family-secondary: var(--font-inter), 'Manrope', sans-serif;
   --font-family-script: 'Adventures Unlimited Script', cursive;
   
   /* Villa de Latina Colors */
@@ -47,6 +48,10 @@ body {
   color: rgb(var(--foreground-rgb));
   background: var(--color-satin-linen-01, #F9F6F1);
   font-family: var(--font-family-secondary, 'Manrope', sans-serif);
+  /* Optimize font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Custom scrollbar */

@@ -1,0 +1,14 @@
+# robots.txt untuk Villa De La Tina
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://villadelatina.com/sitemap.xml
+
+# Disallow admin dan API routes
+Disallow: /api/
+Disallow: /admin
+
+# Allow images
+Allow: /images/
+Allow: /videos/

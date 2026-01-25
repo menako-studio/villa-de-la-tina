@@ -1,162 +1,265 @@
-# Villa De La Tina - Private Retreat Website
+# 🏡 Villa De La Tina - Website Resmi
 
-## Project Overview
-Website untuk Villa De La Tina - private retreat villa yang menawarkan pengalaman menginap yang tenang dan personal di Kuningan.
+Website resmi Villa De La Tina Kuningan - Villa healing dan pusat kegiatan masyarakat di kaki Gunung Ciremai, Jawa Barat.
 
-## Features
-- 🏠 Landing page dengan informasi villa & fasilitas
-- 🧘 Paket wellness & healing programs
-- 📸 Gallery showcase
-- 📝 Blog untuk artikel wellness
-- 👨‍💼 CMS Admin panel untuk mengelola konten
-- 📱 Responsive design - mobile friendly
-- 🔐 Authentication untuk admin CMS
+## 📋 Deskripsi Project
 
-## Tech Stack
-- **Frontend**: Next.js 14.2.18 + TypeScript + Tailwind CSS
-- **Backend**: Firebase/Firestore + Next.js API Routes
-- **Authentication**: Firebase Auth
-- **Calendar**: Google Calendar API
-- **Deployment**: Firebase Hosting
-- **UI Components**: Headless UI + Heroicons + Lucide React
-- **Code Quality**: ESLint + Prettier + Husky (Git Hooks)
+Villa De La Tina adalah destinasi healing premium yang menggabungkan ketenangan alam pegunungan dengan fasilitas modern. Website ini dibangun dengan Next.js dan TypeScript untuk memberikan pengalaman user yang optimal dengan SEO terbaik.
 
-## Project Structure
+### Halaman Utama:
+- **Homepage (/)** - Informasi umum, fasilitas, paket, dan galeri
+- **Event & Venue (/event-venue)** - Informasi sewa villa untuk acara dan workshop
+- **Tina Wiryawati Center (/tina-wiryawati-center)** - Program pelatihan dan pemberdayaan masyarakat
+- **Tentang Kami (/tentang-kami)** - Cerita, visi, dan perjalanan Villa De La Tina
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 14.2.18 (Pages Router)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 3.4
+- **Database**: Firebase (Firestore)
+- **Deployment**: Vercel / Firebase Hosting
+- **Package Manager**: npm
+
+## 📁 Struktur Project
+
 ```
-src/
-├── components/
-│   ├── layout/         # Navbar, Header, Footer
-│   ├── cards/          # Reusable card components
-│   └── sections/       # Page section components
-├── pages/              # Next.js pages & API routes
-├── lib/
-│   ├── config/         # Firebase & app configuration
-│   ├── utils/          # Utility functions
-│   └── services/       # Backend services
-├── types/              # TypeScript type definitions
-├── hooks/              # Custom React hooks
-├── cms/                # Admin CMS components
-└── styles/             # Global styles
+villa-de-la-tina/
+├── public/                    # Asset statis (images, videos)
+│   ├── images/               
+│   └── videos/
+├── src/
+│   ├── components/           # Komponen reusable
+│   │   ├── cards/           # Card components
+│   │   ├── layout/          # Layout components (Header, Footer, Navbar)
+│   │   └── sections/        # Section components untuk pages
+│   ├── lib/
+│   │   ├── config/          # Konfigurasi Firebase
+│   │   └── utils/           # Utility functions
+│   ├── pages/               # Next.js pages
+│   │   ├── api/             # API routes
+│   │   ├── event-venue/     # Event & Venue page
+│   │   ├── tina-wiryawati-center/  # TWC page
+│   │   ├── tentang-kami.tsx # About page
+│   │   └── index.tsx        # Homepage
+│   ├── styles/              # Global styles
+│   └── types/               # TypeScript types
+├── firebase.json            # Firebase configuration
+├── firestore.rules          # Firestore security rules
+├── firestore.indexes.json   # Firestore indexes
+├── next.config.js           # Next.js configuration
+├── tailwind.config.js       # Tailwind configuration
+└── tsconfig.json            # TypeScript configuration
 ```
 
-📚 **Detailed documentation**: [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)
-
-## Git Workflow & Testing
-
-This project uses **automated testing** before commits and pushes to prevent errors from being pushed to the repository.
-
-### Pre-Commit Checks (Automatic)
-- ✅ ESLint - Code quality check
-- ✅ TypeScript - Type checking
-
-### Pre-Push Checks (Automatic)
-- ✅ Build Test - Ensures all pages compile successfully
-
-📚 **Full workflow guide**: [GIT_WORKFLOW.md](GIT_WORKFLOW.md)
-
-## Getting Started
+## 🛠️ Setup & Installation
 
 ### Prerequisites
-- Node.js 18+
-- Firebase account
-- Google Cloud Console project (for Calendar API)
+- Node.js 18+ 
+- npm atau yarn
+- Git
 
-### Installation
+### Langkah-langkah Setup
+
+1. **Clone Repository**
 ```bash
-# Clone repository
 git clone <repository-url>
-cd villa-de-latina
+cd villa-de-la-tina
+```
 
-# Install dependencies
+2. **Install Dependencies**
+```bash
 npm install
+```
 
-# Run development server
+3. **Setup Environment Variables**
+
+Buat file `.env.local` di root project:
+```env
+# Firebase Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
+
+4. **Run Development Server**
+```bash
 npm run dev
 ```
 
-### Available Scripts
+Website akan berjalan di `http://localhost:3000`
+
+## 📦 Available Scripts
+
 ```bash
-npm run dev              # Start development server
-npm run build            # Build for production
-npm run start            # Start production server
-npm run lint             # Run ESLint
-npm run lint:fix         # Run ESLint with auto-fix
-npm run type-check       # TypeScript type checking
-npm run test:pre-commit  # Run pre-commit tests manually
-npm run test:pre-push    # Run pre-push tests manually
-npm run firebase:deploy  # Deploy to Firebase
+# Development
+npm run dev          # Jalankan development server
+npm run build        # Build untuk production
+npm start            # Jalankan production build
+
+# Linting & Formatting
+npm run lint         # Check linting errors
+npm run type-check   # Check TypeScript errors
 ```
 
-### Firebase Setup
-1. Create Firebase project
-2. Enable Firestore Database
-3. Enable Authentication
-4. Setup Firebase Hosting
-5. Configure environment variables
+## 🎨 Best Practices yang Diimplementasikan
 
-### Google Calendar API Setup
-1. Enable Google Calendar API in Google Cloud Console
-2. Create service account credentials
-3. Share calendar with service account email
-4. Add credentials to environment variables
+### 1. SEO Optimization
+- ✅ Meta tags lengkap (title, description, keywords)
+- ✅ Open Graph tags untuk social media
+- ✅ Twitter Cards
+- ✅ Structured Data (JSON-LD Schema.org)
+- ✅ Canonical URLs
+- ✅ Responsive design untuk mobile SEO
 
-## Environment Variables
-```env
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-NEXT_PUBLIC_FIREBASE_APP_ID=
+### 2. Performance Optimization
+- ✅ Next.js Image optimization dengan AVIF/WebP
+- ✅ Font optimization dengan `next/font/google`
+- ✅ SWC minification untuk bundle size lebih kecil
+- ✅ Lazy loading untuk components
+- ✅ Compression enabled
+- ✅ Code splitting otomatis
 
-FIREBASE_PRIVATE_KEY=
-FIREBASE_CLIENT_EMAIL=
-FIREBASE_PROJECT_ID=
+### 3. Code Quality
+- ✅ TypeScript untuk type safety
+- ✅ ESLint configuration
+- ✅ Komponen modular dan reusable
+- ✅ Proper file organization
+- ✅ Clean code principles
 
-GOOGLE_CALENDAR_ID=
-GOOGLE_SERVICE_ACCOUNT_KEY=
+### 4. Accessibility
+- ✅ Semantic HTML
+- ✅ Alt text untuk semua images
+- ✅ Keyboard navigation support
+- ✅ ARIA labels where needed
+
+## 🔧 Configuration Files
+
+### next.config.js
+```javascript
+// Sudah dioptimasi dengan:
+- reactStrictMode: true
+- swcMinify: true
+- Image formats: AVIF & WebP
+- Compression enabled
+- Security headers
 ```
 
-## Deployment
+### tailwind.config.js
+```javascript
+// Custom configuration:
+- Custom fonts
+- Custom colors
+- Extended spacing
+- Responsive breakpoints
+```
+
+## 🔥 Firebase Setup
+
+### Firestore Rules
+Security rules sudah dikonfigurasi di `firestore.rules` untuk:
+- Public read access untuk data publik
+- Admin write access dengan authentication
+
+### Firestore Indexes
+Custom indexes untuk query optimization tersedia di `firestore.indexes.json`
+
+## 📱 Responsive Design
+
+Website fully responsive dengan breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px  
+- Desktop: > 1024px
+
+## 🚢 Deployment
+
+### Deploy ke Vercel (Recommended)
+
+1. **Connect ke Vercel**
 ```bash
-# Build & test locally first
+npm install -g vercel
+vercel login
+```
+
+2. **Deploy**
+```bash
+vercel --prod
+```
+
+3. **Set Environment Variables** di Vercel Dashboard
+   - Tambahkan semua environment variables dari `.env.local`
+
+### Deploy ke Firebase Hosting
+
+1. **Install Firebase CLI**
+```bash
+npm install -g firebase-tools
+firebase login
+```
+
+2. **Build & Deploy**
+```bash
 npm run build
-
-# Deploy to Firebase Hosting
-npm run firebase:deploy
+firebase deploy --only hosting
 ```
 
-## Development Workflow
+## 🐛 Troubleshooting
 
-### Making Changes
-1. Create a new branch for your feature
-2. Make your changes
-3. Run tests manually (optional): `npm run test:pre-commit`
-4. Commit changes: `git commit -m "your message"`
-   - ✅ Pre-commit hook will run automatically (lint + type-check)
-5. Push to repository: `git push`
-   - ✅ Pre-push hook will run automatically (build test)
+### Build Errors
+```bash
+# Clear cache and rebuild
+rm -rf .next
+npm run build
+```
 
-### Hooks Automatically Run
-- **Pre-commit**: Lint + Type Check
-- **Pre-push**: Build Test
+### Type Errors
+```bash
+# Check TypeScript errors
+npm run type-check
+```
 
-If any test fails, the commit/push will be blocked until you fix the errors.
+### Firebase Connection Issues
+- Pastikan environment variables sudah benar
+- Check Firebase console untuk quota dan permissions
 
-📚 **Full workflow guide**: [GIT_WORKFLOW.md](GIT_WORKFLOW.md)
+## 📈 SEO Checklist
 
-## Documentation
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) - Detailed project structure
-- [GIT_WORKFLOW.md](GIT_WORKFLOW.md) - Git workflow & testing guide
+- [x] Meta tags di semua pages
+- [x] Structured data (Schema.org)
+- [x] Open Graph tags
+- [x] Twitter Cards
+- [x] Canonical URLs
+- [x] XML Sitemap (auto-generated by Next.js)
+- [x] Robots.txt
+- [x] 404 error page
+- [x] Fast loading time (< 3s)
+- [x] Mobile-friendly
+- [x] HTTPS enabled
 
-## Features Roadmap
-- [x] Landing page design
-- [x] Facilities & packages showcase
-- [x] Gallery
-- [x] Blog structure
-- [x] Admin CMS for content management
-- [x] Automated testing with git hooks
-- [ ] Google Calendar integration
-- [ ] User authentication
-- [ ] Booking system
-- [ ] Payment integration
+## 🎯 PageSpeed Optimization
+
+Target metrics:
+- **First Contentful Paint**: < 1.8s
+- **Largest Contentful Paint**: < 2.5s
+- **Time to Interactive**: < 3.8s
+- **Cumulative Layout Shift**: < 0.1
+- **Total Blocking Time**: < 200ms
+
+## 📞 Support & Contact
+
+Untuk pertanyaan teknis atau issues:
+1. Buka issue di GitHub repository
+2. Contact: [developer contact]
+
+## 📄 License
+
+© 2024 Villa De La Tina. All rights reserved.
+
+---
+
+**Last Updated**: December 2024
+**Version**: 1.0.0
+**Maintained by**: Menako Studio

@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Footer Content */}
         <div className="flex flex-col gap-10">
           <div className="w-full h-px bg-white/20" />
-          <div className="flex flex-col gap-10 md:gap-12 md:flex-row md:gap-8 lg:gap-20 lg:justify-between">
+          <div className="flex flex-col gap-10 md:flex-row md:gap-8 lg:gap-20 lg:justify-between">
             {/* Explore */}
             <div className="flex flex-col gap-4 w-full md:w-[240px]">
               <p className="font-['Manrope'] font-medium text-[14px] leading-[21px] text-[#f3b4ae]">Explore</p>
