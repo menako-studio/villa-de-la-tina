@@ -17,8 +17,21 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
     medium: 'w-full md:w-[336px] h-[350px]'
   };
 
+  const handleClick = () => {
+    if (post.url) {
+      window.open(post.url, '_blank', 'noopener');
+    }
+  };
+
   return (
-    <div className={`relative rounded-[10px] overflow-hidden group cursor-pointer ${sizeClasses[post.size]}`}>
+    <div
+      className={`relative rounded-[10px] overflow-hidden group cursor-pointer ${sizeClasses[post.size]}`}
+      onClick={post.url ? handleClick : undefined}
+      role={post.url ? 'link' : undefined}
+      tabIndex={post.url ? 0 : undefined}
+      onKeyDown={post.url ? (e) => { if (e.key === 'Enter') handleClick(); } : undefined}
+      aria-label={post.title}
+    >
       <div className="absolute inset-0">
         <Image
           src={post.image}

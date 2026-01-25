@@ -52,49 +52,34 @@ export const blogCategories = ['Pelatihan', 'Healthy', 'Travel', 'Food', 'Lifest
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Pelatihan Sabun Organik untuk UMKM Lokal',
+    title: 'Tina Wiryawati Gagas Program BBM, Solusi Pendidikan dan Pengangguran di Kuningan',
     category: 'Pelatihan',
-    author: 'TWC Team',
-    date: '14 Jun, 2024',
-    image: '/images/tina-wiryawati-center/blog-twc.webp',
-    size: 'large'
+    author: 'Andini Rahmawati',
+    date: '11 Jun, 2025',
+    image: '/images/tina-wiryawati-center/blog-bbm.webp',
+    size: 'large',
+    url: 'https://rri.co.id/cirebon/daerah/1574649/bbm-tina-wiryawati-solusi-pendidikan-untuk-kuningan'
   },
   {
     id: 2,
-    title: 'Workshop Pengolahan Kopi Sustainable',
+    title: 'Tina Wiryawati Gelar Pelatihan Swasembada Rumah untuk Ojol dan PKK di Kuningan',
     category: 'Pelatihan',
     author: 'TWC Team',
-    date: '10 Jun, 2024',
-    image: '/images/tina-wiryawati-center/blog-twc.webp',
-    size: 'small'
+    date: '2 Jan, 2025',
+    image: '/images/tina-wiryawati-center/blog-rumah-ojol.webp',
+    size: 'medium',
+    url: 'https://gerindra.id/2025/02/03/memperingati-hut-ke-17-partai-gerindra-tina-wiryawati-gelar-pelatihan-swasembada-rumah/'
   },
   {
     id: 3,
-    title: 'Gathering Komunitas Petani Organik',
-    category: 'Pelatihan',
-    author: 'TWC Team',
-    date: '5 Jun, 2024',
-    image: '/images/tina-wiryawati-center/blog-twc.webp',
-    size: 'medium'
-  },
-  {
-    id: 4,
-    title: 'Pelatihan Olahan Pangan Sehat',
-    category: 'Pelatihan',
-    author: 'TWC Team',
-    date: '1 Jun, 2024',
-    image: '/images/tina-wiryawati-center/blog-twc.webp',
-    size: 'medium'
-  },
-  {
-    id: 5,
-    title: 'Kolaborasi dan Inovasi Bersama',
+    title: 'BesTina Nyakola UMKM Dorong Perempuan Lebih Berdaya Lewat Pelatihan Keterampilan',
     category: 'Pelatihan',
     author: 'TWC Team',
     date: '28 May, 2024',
     image: '/images/tina-wiryawati-center/blog-twc.webp',
-    size: 'medium'
-  }
+    size: 'small',
+    url: 'https://www.republika.id/posts/53104/hj-tina-wiryawati-gencar-berdayakan-ekonomi-keluarga'
+  },
 ];
 
 export const galleryMoments: GalleryMoment[] = [

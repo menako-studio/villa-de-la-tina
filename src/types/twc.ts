@@ -15,6 +15,7 @@ export interface BlogPost {
   date: string;
   image: string;
   size: 'large' | 'small' | 'medium';
+  url?: string;
 }
 
 export interface GalleryMoment {
