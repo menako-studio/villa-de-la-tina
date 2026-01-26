@@ -17,27 +17,30 @@ export const eventDetail: EventDetail = {
 
 export const contentSections: ContentSection[] = [
   {
-    title: 'Sebuah Ruang yang\nTumbuh Perlahan',
+    title: 'Tentang Pelatihan Ini',
     paragraphs: [
-      'Villa De La Tina dirawat sebagai ruang untuk bertemu dan tinggal lebih lama. Tempat percakapan terjadi tanpa tergesa, dan waktu dibiarkan berjalan dengan ritmenya sendiri.',
-      'Dari kebiasaan berkumpul itulah, berbagai pertemuan dan kegiatan tumbuh secara alami.'
+      'Pelatihan ini dirancang untuk memperkenalkan proses produksi sabun secara sederhana dan aplikatif, menyesuaikan dengan kebutuhan dan potensi peserta di lingkungan sekitar.'
     ],
     image: '/images/event-venue/content-event.webp'
   },
   {
-    title: 'Sebuah Ruang yang Tumbuh Perlahan',
+    title: 'Tujuan yang Ingin Dicapai',
     paragraphs: [
-      'Villa De La Tina dirawat sebagai ruang untuk bertemu dan tinggal lebih lama. Tempat percakapan terjadi tanpa tergesa, dan waktu dibiarkan berjalan dengan ritmenya sendiri.',
-      'Dari kebiasaan berkumpul itulah, berbagai pertemuan dan kegiatan tumbuh secara alami.'
+      `<ul>
+        <li>Memahami proses produksi dasar</li>
+        <li>Meningkatkan keterampilan praktis peserta</li>
+        <li>Mendorong kemandirian dan kualitas produk</li>
+        <li>Membuka ruang belajar bersama</li>
+      </ul>`
     ],
     image: '/images/event-venue/content-2-event.webp'
   }
 ];
 
 export const ctaSection: CTASection = {
-  title: 'Berakar dari Sebuah Ruang',
-  description: 'Sebagian besar kegiatan di Tina Wiryawati Center berawal dari Villa De La Tina, sebuah ruang yang memberi ketenangan bagi pertemuan dan pembelajaran.',
-  buttonText: 'Mulai percakapan',
+  title: 'Tertarik untuk Terlibat?',
+  description: 'Jika Anda ingin mengetahui pelatihan serupa atau berdiskusi mengenai kegiatan berikutnya, kami membuka ruang untuk percakapan.',
+  buttonText: 'Daftar sekarang',
   buttonLink: '/tina-wiryawati-center',
   image: '/images/event-venue/cta-event.webp'
 };

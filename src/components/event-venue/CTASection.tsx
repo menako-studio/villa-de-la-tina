@@ -17,7 +17,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ cta }) => {
         {/* Content Container */}
         <div className="relative flex flex-col gap-10 md:flex-row md:gap-0">
           {/* Image - Left with zoom effect */}
-          <div className="relative w-full md:w-[600px] h-[448px] overflow-hidden md:-ml-6 lg:-ml-20 group">
+          <div className="relative w-full md:w-[400px] lg:w-[800px] h-[448px] overflow-hidden md:-ml-6 lg:-ml-20 group">
             <Image
               src={cta.image}
               alt={cta.title}
@@ -29,19 +29,19 @@ export const CTASection: React.FC<CTASectionProps> = ({ cta }) => {
           </div>
 
           {/* Text Content - Right */}
-          <div className="flex flex-col justify-between flex-1 md:pl-10 lg:pl-20 md:pr-0">
-            <h2 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white mb-6 md:mb-0">
+          <div className="flex flex-col justify-between flex-1 pl-10 pr-0 md:pl-10 lg:pl-20">
+            <h2 className="font-['Young_Serif'] text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white mb-6 md:mb-0">
               {cta.title}
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] md:text-[18px] md:leading-[27px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#f6f6f6]">
                 {cta.description}
               </p>
 
               <Link href={cta.buttonLink}>
                 <button 
-                  className="group border-b-[1.5px] border-white px-5 py-3 transition-all duration-300 hover:border-[#d95143] hover:px-6"
+                  className="group border-b-[1.5px] border-white px-5 py-3 mt-4 transition-all duration-300 hover:border-[#d95143] hover:px-6"
                   aria-label={cta.buttonText}
                 >
                   <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white transition-colors duration-300 group-hover:text-[#f3b4ae]">

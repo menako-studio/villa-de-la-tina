@@ -38,7 +38,7 @@ export const EventHero: React.FC<EventHeroProps> = ({ event }) => {
           </p>
 
           {/* Title */}
-          <h1 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white mb-6">
+          <h1 className="font-['Young_Serif']  text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white mb-6">
             {event.title}
           </h1>
 
