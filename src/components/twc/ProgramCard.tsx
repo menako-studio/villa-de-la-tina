@@ -19,6 +19,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({ card }) => {
           alt={card.title}
           fill
           className="object-cover"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col items-start justify-between flex-1 w-full gap-4 mt-4">

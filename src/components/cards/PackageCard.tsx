@@ -26,6 +26,7 @@ export default function PackageCard({
           alt={alt}
           fill
           className="object-cover"
+          loading="lazy"
         />
       </div>
       <div className={`${backgroundColor} w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-40 justify-center ${reversed ? 'lg:order-1' : ''}`}>
@@ -36,9 +37,11 @@ export default function PackageCard({
           <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
             {description}
           </p>
-          <button className="bg-[#d95143] px-4 py-2.5 text-white font-['Manrope'] font-medium text-[14px] leading-[21px] hover:bg-[#a8382d] transition-colors">
-            Pelajari lebih lanjut
-          </button>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+            <button className="bg-[#d95143] px-4 py-2.5 text-white font-['Manrope'] font-medium text-[14px] leading-[21px] hover:bg-[#a8382d] transition-colors">
+              Pelajari lebih lanjut
+            </button>
+          </a>
         </div>
       </div>
     </div>

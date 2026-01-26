@@ -55,6 +55,7 @@ export const GallerySection: React.FC = () => {
                       alt={moment.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute bg-gradient-to-b from-transparent to-[#222] h-full left-0 top-0 w-full group-hover:to-[#000] transition-colors duration-300" />
                   </div>

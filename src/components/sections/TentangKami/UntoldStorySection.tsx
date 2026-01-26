@@ -34,6 +34,7 @@ export function UntoldStorySection() {
                   fill
                   className="object-cover"
                   quality={100}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -50,6 +51,7 @@ export function UntoldStorySection() {
               fill
               className="object-cover"
               quality={100}
+              loading="lazy"
             />
           </div>
         </div>

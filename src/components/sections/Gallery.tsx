@@ -55,6 +55,7 @@ export default function Gallery() {
                     alt={item.alt}
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#222222]" />
                   <div className="absolute bottom-6 lg:bottom-8 left-6 lg:left-8">

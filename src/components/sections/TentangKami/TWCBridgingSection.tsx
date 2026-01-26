@@ -19,6 +19,7 @@ export function TWCBridgingSection() {
             fill
             quality={100}
             className="object-cover"
+            loading="lazy"
           />
         </div>
         {/* Tablet: show tablet image */}
@@ -29,6 +30,7 @@ export function TWCBridgingSection() {
             fill
             quality={100}
             className="object-cover"
+            loading="lazy"
           />
         </div>
         {/* Desktop: show desktop image */}
@@ -39,6 +41,7 @@ export function TWCBridgingSection() {
             fill
             quality={100}
             className="object-cover"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col items-start flex-1 gap-10">

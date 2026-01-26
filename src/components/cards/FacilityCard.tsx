@@ -30,6 +30,7 @@ export default function FacilityCard({
           alt={alt}
           fill
           className="object-cover"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col gap-4 lg:gap-6">

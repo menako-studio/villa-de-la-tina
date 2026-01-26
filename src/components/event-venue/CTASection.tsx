@@ -17,7 +17,7 @@ export const CTASection: React.FC<CTASectionProps> = ({ cta }) => {
         {/* Content Container */}
         <div className="relative flex flex-col gap-10 md:flex-row md:gap-0">
           {/* Image - Left with zoom effect */}
-          <div className="relative w-full md:w-[400px] lg:w-[8 00px] h-[448px] overflow-hidden md:-ml-6 lg:-ml-20 group">
+          <div className="relative w-full md:w-[400px] lg:w-[800px] h-[448px] overflow-hidden md:-ml-6 lg:-ml-20 group">
             <Image
               src={cta.image}
               alt={cta.title}

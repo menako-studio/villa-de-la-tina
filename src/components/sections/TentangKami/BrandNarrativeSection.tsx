@@ -33,6 +33,7 @@ export function BrandNarrativeSection() {
           fill
           className="object-cover"
           quality={100}
+          loading="lazy"
         />
       </div>
 
@@ -44,6 +45,7 @@ export function BrandNarrativeSection() {
           fill
           className="object-cover"
           quality={100}
+          loading="lazy"
         />
       </div>
 
@@ -55,6 +57,7 @@ export function BrandNarrativeSection() {
           fill
           className="object-cover"
           quality={100}
+          loading="lazy"
         />
       </div>
     </section>
