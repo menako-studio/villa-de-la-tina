@@ -37,11 +37,11 @@ export default function PackageCard({
           <p className="font-['Manrope'] font-normal text-[16px] leading-[24px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#454545]">
             {description}
           </p>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"> */}
             <button className="bg-[#d95143] px-4 py-2.5 text-white font-['Manrope'] font-medium text-[14px] leading-[21px] hover:bg-[#a8382d] transition-colors">
               Pelajari lebih lanjut
             </button>
-          </a>
+          {/* </a> */}
         </div>
       </div>
     </div>

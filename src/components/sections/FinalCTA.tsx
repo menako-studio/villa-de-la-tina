@@ -22,11 +22,11 @@ export default function FinalCTA() {
           <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#f6f6f6]">
             Jika Anda sedang mencari penginapan di Kuningan yang menawarkan ketenangan dan pengalaman villa healing, Villa De La Tina membuka ruang untuk memulai percakapan, secara personal dan tanpa tergesa.
           </p>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"> */}
             <button className="border-b-[1.5px] border-white pb-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] text-left hover:border-[#d95143] transition-colors w-fit">
               Mulai percakapan
             </button>
-          </a>
+          {/* </a> */}
         </div>
       </div>
     </section>
