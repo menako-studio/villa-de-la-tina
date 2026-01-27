@@ -9,6 +9,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "type-check": "tsc --noEmit",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "prebuild": "npm run sitemap",
     "test:pre-commit": "npm run lint && npm run type-check",
     "test:pre-push": "npm run build",
     "prepare": "husky",
