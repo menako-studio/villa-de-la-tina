@@ -1,22 +1,31 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { EventHero, ContentSection, CTASection } from '@/components/event-venue';
-import { eventDetail, contentSections, ctaSection } from '@/lib/data/event-venue-data';
+import { 
+  EventHero, 
+  IntroSection, 
+  EventTypesSection, 
+  GallerySection, 
+  CTASection 
+} from '@/components/event-venue';
+import { 
+  eventVenueHero,
+  eventVenueIntro,
+  eventTypes,
+  eventVenueGallery,
+  eventVenueCTA
+} from '@/lib/data/event-venue-data';
 
 /**
  * Event & Venue Page
  * 
- * Displays upcoming events and venue information for Villa De La Tina.
- * Features hero section with event details, content sections showcasing
- * the venue, and a call-to-action to encourage engagement.
+ * Displays the Event & Venue information for Villa De La Tina.
+ * Features hero section, intro, event types, gallery, and CTA.
  * 
  * Optimized for:
  * - Page speed with Next.js Image optimization
- * - Responsive design across all breakpoints
+ * - Responsive design across all breakpoints (Mobile, Tablet, Desktop)
  * - Accessibility with semantic HTML and ARIA labels
- * - Maintainability with separated concerns
+ * - Pixel-perfect match to Figma design
  */
 export default function EventVenuePage() {
   return (
@@ -76,27 +85,45 @@ export default function EventVenuePage() {
         />
       </Head>
 
-      <Navbar />
+      
+      
+      {/* Hero Section */}
+      <EventHero
+        subtitle={eventVenueHero.subtitle}
+        title={eventVenueHero.title}
+        description={eventVenueHero.description}
+        heroImage={eventVenueHero.heroImage}
+      />
 
-      <main>
-        {/* Hero Section with Event Details */}
-        <EventHero event={eventDetail} />
+      {/* Intro Section */}
+      <IntroSection
+        headline={eventVenueIntro.headline}
+        description={eventVenueIntro.description}
+      />
 
-        {/* Content Sections - Showcasing the Venue */}
-        {contentSections.map((content, index) => (
-          <ContentSection 
-            key={index}
-            content={content}
-            layout={index === 0 ? 'full' : 'split'}
-            index={index}
-          />
-        ))}
+      {/* Event Types Section */}
+      <EventTypesSection
+        header={eventTypes.header}
+        eventTypes={eventTypes.types}
+      />
 
-        {/* Call to Action Section */}
-        <CTASection cta={ctaSection} />
-      </main>
+      {/* Gallery Section */}
+      <GallerySection
+        header={eventVenueGallery.header}
+        description={eventVenueGallery.description}
+        images={eventVenueGallery.images}
+      />
 
-      <Footer />
+      {/* CTA Section */}
+      <CTASection
+        title={eventVenueCTA.title}
+        description={eventVenueCTA.description}
+        buttonText={eventVenueCTA.buttonText}
+        buttonLink={eventVenueCTA.buttonLink}
+        image={eventVenueCTA.image}
+      />
+
+      
     </>
   );
 }

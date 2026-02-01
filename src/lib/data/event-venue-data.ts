@@ -255,3 +255,64 @@ export const ctaSection: CTASection = {
   buttonLink: '/tina-wiryawati-center',
   image: '/images/event-venue/cta-event.webp'
 };
+
+/**
+ * Event & Venue Page Data
+ */
+
+// Hero Section Data
+export const eventVenueHero = {
+  subtitle: 'EVENT & VENUE',
+  title: 'A Setting for Meaningful Gatherings',
+  description: 'Villa De La Tina menghadirkan ruang acara yang menyatu dengan alam Kuningan dirancang untuk pertemuan yang terasa personal, hangat, dan berkesan.',
+  heroImage: '/images/event-venue/hero-event.webp'
+};
+
+// Intro Section Data
+export const eventVenueIntro = {
+  headline: `Di tengah lanskap hijau Kuningan, Villa De La Tina hadir sebagai ruang yang menyatu dengan alam, tenang, terbuka, dan penuh kehadiran.`,
+  description: 'Sebagai villa healing Kuningan, Villa De La Tina terletak di Desa Puncak, Kabupaten Kuningan, di antara lanskap pegunungan dan hamparan perkebunan yang hijau. Cahaya pagi jatuh lembut di sela pepohonan, udara bergerak perlahan, dan hari-hari dijalani tanpa tergesa. Bukan sekadar tempat singgah, melainkan penginapan di Kuningan yang mengundang Anda untuk benar-benar tinggal dan kembali pada ritme yang lebih pelan.'
+};
+
+// Event Types Section Data
+export const eventTypes = {
+  header: 'Untuk Beragam Momen',
+  types: [
+    {
+      title: 'Weddings & Celebration',
+      image: '/images/event-venue/wedding.webp'
+    },
+    {
+      title: 'Corporate Gathering',
+      image: '/images/event-venue/corporate-gathering.webp'
+    },
+    {
+      title: 'Community Event',
+      image: '/images/event-venue/community-event.webp'
+    }
+  ]
+};
+
+// Gallery Section Data
+export const eventVenueGallery = {
+  header: 'In Every Moment',
+  description: 'Sebagai villa healing Kuningan, Villa De La Tina menghadirkan rangkaian pengalaman menginap yang dijalani dengan ritme perlahan. Setiap paket merupakan undangan untuk tinggal lebih lama, merasakan alam, dan memberi waktu pada diri sendiri.',
+  images: [
+    '/images/event-venue/moment-1.webp',
+    '/images/event-venue/moment-2.webp',
+    '/images/event-venue/moment-3.webp',
+    '/images/event-venue/moment-4.webp',
+    '/images/event-venue/moment-5.webp',
+    '/images/event-venue/moment-6.webp'
+  ]
+};
+
+// CTA Section Data
+export const eventVenueCTA = {
+  title: 'Dijalani dengan Perhatian',
+  description: 'Setiap acara dirancang melalui percakapan. Kami memahami bahwa setiap kebutuhan berbeda-beda. Oleh karena itu, pendekatan kami bersifat personal, fleksibel, dan penuh perhatian terhadap detail.',
+  buttonText: 'Mulai percakapan',
+  buttonLink: '/contact',
+  image: '/images/event-venue/cta-event-venue.webp'
+};
+

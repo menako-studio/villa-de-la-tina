@@ -125,7 +125,12 @@ export default function EventDetailPage({ event, relatedEvents }: EventDetailPag
 
       <main>
         {/* Hero Section with Event Details */}
-        <EventHero event={event} />
+        <EventHero
+          subtitle={event.subtitle}
+          title={event.title}
+          description={event.description}
+          heroImage={event.heroImage}
+        />
 
         {/* Event Description Section */}
         <section className="bg-[#f9f6f1] px-6 py-10 md:px-10 md:py-16 lg:px-20 lg:py-20">
@@ -151,9 +156,9 @@ export default function EventDetailPage({ event, relatedEvents }: EventDetailPag
               </ol>
             </nav>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-16">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-16">
               {/* Main Content */}
-              <div className="lg:col-span-2 space-y-10">
+              <div className="space-y-10 lg:col-span-2">
                 {/* About Event */}
                 <div>
                   <h2 className="font-['Young_Serif'] text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-[#222] mb-6">
@@ -231,7 +236,7 @@ export default function EventDetailPage({ event, relatedEvents }: EventDetailPag
 
               {/* Sidebar */}
               <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-6">
+                <div className="sticky space-y-6 top-24">
                   {/* Event Info Card */}
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-[#e0e0e0]">
                     <h3 className="font-['Manrope'] font-semibold text-[18px] leading-[27px] text-[#222] mb-4">
@@ -328,12 +333,12 @@ export default function EventDetailPage({ event, relatedEvents }: EventDetailPag
 
         {/* Related Events Section */}
         {relatedEvents && relatedEvents.length > 0 && (
-          <section className="bg-white px-6 py-10 md:px-10 md:py-16 lg:px-20 lg:py-20">
+          <section className="px-6 py-10 bg-white md:px-10 md:py-16 lg:px-20 lg:py-20">
             <div className="max-w-[1200px] mx-auto">
               <h2 className="font-['Young_Serif'] text-[28px] leading-[33.6px] md:text-[36px] md:leading-[43.2px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-[#222] mb-10">
                 Event Lainnya
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {relatedEvents.map((relatedEvent) => (
                   <Link 
                     key={relatedEvent.slug}
