@@ -89,20 +89,23 @@ export const galleryMoments: GalleryMoment[] = [
   { id: 4, title: 'Diskusi Kolaborasi', image: '/images/tina-wiryawati-center/moment-4.webp' }
 ];
 
-export const programCards: ProgramCard[] = [
-  {
-    title: 'Pelatihan UMKM',
-    description: 'Pelatihan produksi dan pengolahan produk lokal. Mulai dari sabun, kopi, hingga olahan pangan dengan pendekatan aplikatif dan berkelanjutan.',
-    image: '/images/tina-wiryawati-center/program-twc.webp'
-  },
-  {
-    title: 'Kegiatan Komunitas',
-    description: 'Ruang berkumpul untuk diskusi, gathering, dan pertemuan yang mempererat hubungan antarindividu dan komunitas.',
-    image: '/images/tina-wiryawati-center/program-twc.webp'
-  },
-  {
-    title: 'Workshop dan Kolaborasi',
-    description: 'Kegiatan tematik yang membuka ruang belajar lintas latar belakang, dijalankan secara terbuka dan partisipatif.',
-    image: '/images/tina-wiryawati-center/program-twc.webp'
-  }
-];
+export const programCards: ProgramCard[] = [];
+
+// Uncomment when programs are available:
+// export const programCards: ProgramCard[] = [
+//   {
+//     title: 'Pelatihan UMKM',
+//     description: 'Pelatihan produksi dan pengolahan produk lokal. Mulai dari sabun, kopi, hingga olahan pangan dengan pendekatan aplikatif dan berkelanjutan.',
+//     image: '/images/tina-wiryawati-center/program-twc.webp'
+//   },
+//   {
+//     title: 'Kegiatan Komunitas',
+//     description: 'Ruang berkumpul untuk diskusi, gathering, dan pertemuan yang mempererat hubungan antarindividu dan komunitas.',
+//     image: '/images/tina-wiryawati-center/program-twc.webp'
+//   },
+//   {
+//     title: 'Workshop dan Kolaborasi',
+//     description: 'Kegiatan tematik yang membuka ruang belajar lintas latar belakang, dijalankan secara terbuka dan partisipatif.',
+//     image: '/images/tina-wiryawati-center/program-twc.webp'
+//   }
+// ];

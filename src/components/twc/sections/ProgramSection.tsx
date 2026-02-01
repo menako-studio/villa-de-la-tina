@@ -20,11 +20,24 @@ export const ProgramSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-start w-full gap-6 lg:flex-row lg:gap-4">
-          {programCards.map((card, index) => (
-            <ProgramCard key={index} card={card} />
-          ))}
-        </div>
+        {/* Program Cards or Empty State */}
+        {programCards && programCards.length > 0 ? (
+          <div className="flex flex-col items-start w-full gap-6 lg:flex-row lg:gap-4">
+            {programCards.map((card, index) => (
+              <ProgramCard key={index} card={card} />
+            ))}
+          </div>
+        ) : (
+          <div className="w-full max-w-[1040px]">
+            <div className="border-2 border-dashed border-[#d9cdae] rounded-2xl px-12 py-[120px] flex items-center justify-center">
+              <p className="font-['Manrope'] font-semibold text-[18px] leading-[27px] tracking-[-0.4px] text-[#b0b0b0] text-center max-w-full">
+                Saat ini belum ada jadwal pelatihan yang dibuka.
+                <br />
+                Informasi terbaru akan kami perbarui di halaman ini.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* CTA Card */}
         <div className="bg-[#a8382d] flex flex-col md:flex-row lg:flex-row overflow-hidden w-full max-w-[1040px]">
