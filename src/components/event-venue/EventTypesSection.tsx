@@ -41,7 +41,7 @@ export const EventTypesSection: React.FC<EventTypesSectionProps> = ({ header, ev
               <div key={index} className="flex flex-col items-start w-full lg:w-[336px]">
                 {/* Image Container */}
                 <div className="h-[504px] overflow-hidden relative w-full">
-                  <div className="relative h-full w-full">
+                  <div className="relative w-full h-full">
                     <Image
                       src={eventType.image}
                       alt={eventType.title}
@@ -58,7 +58,7 @@ export const EventTypesSection: React.FC<EventTypesSectionProps> = ({ header, ev
                 <div className="flex flex-col items-start justify-end pt-[24px] w-full">
                   <div className="flex items-center justify-between w-full">
                     {/* Title */}
-                    <h3 className="font-['Manrope'] font-semibold text-[16px] leading-[24px] md:text-[18px] md:leading-[27px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#222] whitespace-nowrap">
+                    <h3 className="font-['Manrope']  text-[16px] leading-[24px] md:text-[18px] md:leading-[27px] lg:text-[20px] lg:leading-[30px] tracking-[-0.4px] text-[#222] whitespace-nowrap">
                       {eventType.title}
                     </h3>
 

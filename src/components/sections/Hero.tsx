@@ -24,7 +24,7 @@ export default function Hero() {
           <p className="font-['Manrope'] font-semibold text-[14px] leading-[21px] tracking-[-0.2px] text-white text-center uppercase">
             VILLA DE LA TINA
           </p>
-          <h1 className="font-['Young_Serif'] font-semibold text-[38px] md:text-[48px] lg:text-[56px] leading-[45.6px] md:leading-[57.6px] lg:leading-[67.2px] tracking-[-2px] text-white text-center max-w-[700px]">
+          <h1 className="font-['Young_Serif']  text-[38px] md:text-[48px] lg:text-[56px] leading-[45.6px] md:leading-[57.6px] lg:leading-[67.2px] tracking-[-2px] text-white text-center max-w-[700px]">
             A Private Retreat in<br />the Heart of Nature
           </h1>
         </div>

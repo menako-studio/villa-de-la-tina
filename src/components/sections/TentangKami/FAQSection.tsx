@@ -109,7 +109,7 @@ export function FAQSection({ items, openFaq, onToggle }: FAQSectionProps) {
   return (
     <section className="bg-[#f9f6f1] flex flex-col items-center overflow-hidden">
       <div className={`bg-[#f9f6f1] flex flex-col gap-10 p-6 md:p-10 lg:p-20 w-full ${LAYOUTS.maxWidth}`}>
-        <h2 className={TYPOGRAPHY.h2Center}>FAQ</h2>
+        <h2 className={TYPOGRAPHY.h2Center + ' text-center mx-auto'}>FAQ</h2>
         <div className="flex flex-col items-center w-full gap-6 mx-auto md:max-w-4xl">
           {items?.map((item, index) => (
             <FAQItemComponent

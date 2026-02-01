@@ -135,14 +135,19 @@ export default function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <button 
-              disabled
-              className="bg-[#999999] flex gap-[6px] items-center justify-center px-[20px] py-[12px] cursor-not-allowed opacity-60"
-            >
+            {/* <a 
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#d95143] flex gap-[6px] items-center justify-center px-[20px] py-[12px] hover:bg-[#c44639] transition-colors"
+            > */}
               <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white">
-                Segera Hadir
+                Pesan sekarang
               </span>
-            </button>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            {/* </a> */}
           </div>
         )}
       </div>

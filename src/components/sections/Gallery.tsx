@@ -36,7 +36,7 @@ export default function Gallery() {
   return (
     <section className="bg-[#f9f6f1] py-10 md:py-16 lg:py-20 px-6 md:px-8 lg:px-20">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
-        <h2 className="font-['Young_Serif'] font-semibold text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black text-center">
+        <h2 className="font-['Young_Serif']  text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black text-center">
           In Every Moment
         </h2>
         

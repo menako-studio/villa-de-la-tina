@@ -57,7 +57,7 @@ export function UntoldStorySection() {
         </div>
       </div>
       <div className="flex flex-col items-center w-full mx-auto mt-10 max-w-7xl">
-          <div className="h-[400px] overflow-hidden relative w-full md:max-w-[550px] ">
+          <div className="h-[500px] overflow-hidden relative w-full ">
             <video
               className="object-cover w-full h-full"
               src="/videos/tracking-1080p.mp4"

@@ -29,7 +29,7 @@ export const EventHero: React.FC<EventHeroProps> = ({ subtitle, title, descripti
           {/* Hero Text Container */}
           <div className="flex flex-col gap-[8px] items-center justify-center w-full max-w-[700px]">
             {/* Subtitle */}
-            <p className="font-['Manrope'] font-semibold text-[14px] leading-[21px] tracking-[-0.2px] text-[#a8382d] uppercase w-full">
+            <p className="font-['Manrope']  text-[14px] leading-[21px] tracking-[-0.2px] text-[#a8382d] uppercase w-full">
               {subtitle}
             </p>
 

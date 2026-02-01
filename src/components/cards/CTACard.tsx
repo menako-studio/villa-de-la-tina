@@ -22,7 +22,7 @@ export default function CTACard({ image, title, description, buttonText }: CTACa
       </div>
       
       <div className="w-full lg:w-[400px] flex flex-col gap-6 lg:gap-40 z-10 relative order-2 lg:order-none">
-        <h3 className="font-['Young_Serif'] font-semibold text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white">
+        <h3 className="font-['Young_Serif'] text-[28px] leading-[33.6px] lg:text-[40px] lg:leading-[48px] tracking-[-1px] text-white">
           {title}
         </h3>
         {description && (

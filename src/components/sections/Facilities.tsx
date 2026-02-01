@@ -51,7 +51,7 @@ export default function Facilities() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 md:gap-12 lg:gap-20">
         {/* Header */}
         <div className="flex flex-col items-center gap-6 text-center md:gap-8 lg:gap-10">
-          <h2 className="font-['Young_Serif'] font-semibold text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black">
+          <h2 className="font-['Young_Serif'] text-[28px] md:text-[36px] lg:text-[40px] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] tracking-[-1px] text-black">
             Dirancang untuk Memulihkan dan<br />Dijalani dengan Tenang
           </h2>
           <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#454545] max-w-full lg:max-w-[700px]">
@@ -60,9 +60,9 @@ export default function Facilities() {
         </div>
         
         {/* Facilities Grid */}
-        <div className="flex flex-col gap-10 md:flex-row md:gap-8 lg:gap-20">
+        <div className="flex flex-col justify-center gap-10 md:flex-row md:gap-8 lg:gap-20">
           {/* Left Column */}
-          <div className="flex flex-col gap-10 md:gap-8 lg:gap-10 w-full md:w-[50%] lg:w-[550px]">
+          <div className="flex flex-col gap-10 md:gap-8 lg:gap-10 w-full md:w-[50%] ">
             {/* SPA */}
             <FacilityCard {...facilities[0]} />
             

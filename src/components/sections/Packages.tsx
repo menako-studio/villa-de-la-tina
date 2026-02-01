@@ -42,18 +42,17 @@ export default function Packages() {
         </div>
         
         {/* Packages */}
-        <div className="flex flex-col gap-6 md:gap-8 lg:gap-10">
+        <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-10">
           {packages.map((pkg, index) => (
             <PackageCard key={index} {...pkg} />
           ))}
-          
+        </div>
           {/* CTA Card */}
           <CTACard 
             image="/images/cta.webp"
             title="Setiap pengalaman dirancang personal dan menyesuaikan kebutuhan serta ritme Anda."
             buttonText="Mulai percakapan"
           />
-        </div>
       </div>
     </section>
   );
