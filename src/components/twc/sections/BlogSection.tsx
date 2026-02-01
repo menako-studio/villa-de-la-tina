@@ -13,8 +13,8 @@ export const BlogSection: React.FC = () => {
   return (
     <section className="bg-[#f9f6f1] flex flex-col items-center overflow-hidden py-10 md:py-10 lg:py-20 px-6 md:px-10 lg:px-20">
       <div className="flex flex-col items-center w-full max-w-[700px] lg:max-w-[1040px] gap-10 md:gap-10 lg:gap-10">
-        <div className="flex flex-col md:flex-row items-start md:items-end md:justify-between w-full gap-6 md:gap-10 lg:gap-10">
-          <div className="flex flex-col items-start gap-6 md:gap-10 w-full md:flex-1">
+        <div className="flex flex-col items-start w-full gap-6 md:flex-row md:items-end md:justify-between md:gap-10 lg:gap-10">
+          <div className="flex flex-col items-start w-full gap-6 md:gap-10 md:flex-1">
             <h2 className="font-['Young_Serif'] leading-[33.6px] md:leading-[43.2px] lg:leading-[48px] text-[#222] text-[28px] md:text-[36px] lg:text-[40px] tracking-[-1px] w-full">
               Jejak Aktivitas
             </h2>
