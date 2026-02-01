@@ -30,11 +30,9 @@ export default function CTACard({ image, title, description, buttonText }: CTACa
             {description}
           </p>
         )}
-        {/* <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"> */}
-          <button className="border-b-[1.5px] border-white pb-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] text-left hover:border-[#d95143] transition-colors w-fit">
-            {buttonText}
-          </button>
-        {/* </a> */}
+        <button disabled className="border-b-[1.5px] border-white pb-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] text-left cursor-not-allowed opacity-60 w-fit">
+          Segera Hadir
+        </button>
       </div>
     </div>
   );

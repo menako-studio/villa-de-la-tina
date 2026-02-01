@@ -42,7 +42,7 @@ export const ProgramSection: React.FC = () => {
               Tertarik untuk terlibat, berbagi keahlian, atau berkolaborasi? kami membuka ruang untuk berdiskusi.
             </p>
             <Button variant="secondary" className="px-5 py-3">
-              Terhubung dengan kami
+              Segera Hadir
             </Button>
           </div>
         </div>

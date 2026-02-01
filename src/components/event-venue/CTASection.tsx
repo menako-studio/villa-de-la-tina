@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface CTASectionProps {
   title: string;
@@ -56,13 +55,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ title, description, butt
               {description}
             </p>
 
-            <Link href={buttonLink}>
-              <button className="border-b-[1.5px] border-white px-5 py-3 flex gap-[6px] items-center justify-center">
-                <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white whitespace-nowrap">
-                  {buttonText}
-                </span>
-              </button>
-            </Link>
+            <button disabled className="border-b-[1.5px] border-white px-5 py-3 flex gap-[6px] items-center justify-center cursor-not-allowed opacity-60">
+              <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white whitespace-nowrap">
+                Segera Hadir
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -98,13 +95,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ title, description, butt
               {description}
             </p>
 
-            <Link href={buttonLink}>
-              <button className="border-b-[1.5px] border-white px-5 py-3 flex gap-[6px] items-center justify-center">
-                <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white whitespace-nowrap">
-                  {buttonText}
-                </span>
-              </button>
-            </Link>
+            <button disabled className="border-b-[1.5px] border-white px-5 py-3 flex gap-[6px] items-center justify-center cursor-not-allowed opacity-60">
+              <span className="font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] text-white whitespace-nowrap">
+                Segera Hadir
+              </span>
+            </button>
           </div>
         </div>
       </div>

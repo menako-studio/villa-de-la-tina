@@ -33,7 +33,7 @@ export const ProgramCard: React.FC<ProgramCardProps> = ({ card }) => {
         </div>
         <div className="w-full mt-auto">
           <Button variant="primary" className="w-full">
-            Daftar sekarang
+            Segera Hadir
           </Button>
         </div>
       </div>

@@ -25,7 +25,7 @@ export const FinalCTASection: React.FC = () => {
             Sebagian besar kegiatan di Tina Wiryawati Center berawal dari Villa De La Tina, sebuah ruang yang memberi ketenangan bagi pertemuan dan pembelajaran.
           </p>
           <Button variant="secondary" className="px-5 py-3">
-            Mulai percakapan
+            Segera Hadir
           </Button>
         </div>
       </div>

@@ -32,11 +32,9 @@ export default function Hero() {
           <p className="font-['Manrope'] font-normal text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[27px] lg:leading-[30px] tracking-[-0.4px] text-[#d1d1d1] text-center">
             Villa De La Tina adalah ruang tinggal yang tenang intim, dan dikelilingi lanskap hijau Kuningan. Dirancang untuk mereka yang menghargai ketenangan, ruang, dan waktu yang berjalan lebih pelan.
           </p>
-          {/* <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer"> */}
-            <button className="bg-[#d95143] px-5 py-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] hover:bg-[#a8382d] transition-colors">
-              Discover the Experience
-            </button>
-          {/* </a> */}
+          <button disabled className="bg-[#999999] px-5 py-3 text-white font-['Manrope'] font-medium text-[16px] leading-[24px] tracking-[-0.5px] cursor-not-allowed opacity-60">
+            Segera Hadir
+          </button>
         </div>
       </div>
     </section>
