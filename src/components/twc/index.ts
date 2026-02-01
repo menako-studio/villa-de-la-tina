@@ -8,6 +8,10 @@ export { Badge } from './Badge';
 export { BlogCard } from './BlogCard';
 export { ProgramCard } from './ProgramCard';
 export { FAQItem } from './FAQItem';
+export { default as FeaturedBlogPost } from './FeaturedBlogPost';
+export { default as CategoryFilter } from './CategoryFilter';
+export { default as BlogCardItem } from './BlogCardItem';
+export { default as PaginationControls } from './PaginationControls';
 
 // Section components
 export { HeroSection } from './sections/HeroSection';
