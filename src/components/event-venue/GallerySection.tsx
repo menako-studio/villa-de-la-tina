@@ -71,79 +71,85 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ header, descript
             <div className="flex flex-col gap-[16px] items-start justify-center w-full">
               {/* Row 1 - Large left, Small right (Desktop/Tablet) / Stacked (Mobile) */}
               <div className="flex flex-col gap-[16px] h-[400px] items-start w-full md:flex-row md:gap-[16px]">
-                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer" onClick={() => openModal(0)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer group" onClick={() => openModal(0)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[0]}
                       alt="Gallery image 1"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
-                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer" onClick={() => openModal(1)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer group" onClick={() => openModal(1)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[1]}
                       alt="Gallery image 2"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 310px"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
               </div>
 
               {/* Row 2 - Small left, Large right (Desktop/Tablet) / Stacked (Mobile) */}
               <div className="flex flex-col gap-[16px] h-[400px] items-start w-full md:flex-row md:gap-[16px]">
-                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer" onClick={() => openModal(2)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer group" onClick={() => openModal(2)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[2]}
                       alt="Gallery image 3"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 310px"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
-                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer" onClick={() => openModal(3)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer group" onClick={() => openModal(3)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[3]}
                       alt="Gallery image 4"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
               </div>
 
               {/* Row 3 - Large left, Small right (Desktop/Tablet) / Stacked (Mobile) */}
               <div className="flex flex-col gap-[16px] h-[400px] items-start w-full md:flex-row md:gap-[16px]">
-                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer" onClick={() => openModal(4)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative flex-1 h-full w-full md:flex-1 cursor-pointer group" onClick={() => openModal(4)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[4]}
                       alt="Gallery image 5"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
-                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer" onClick={() => openModal(5)}>
-                  <div className="relative h-full w-full">
+                <div className="bg-[#454545] overflow-hidden relative h-full w-full md:w-[310px] cursor-pointer group" onClick={() => openModal(5)}>
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={images[5]}
                       alt="Gallery image 6"
                       fill
-                      className="object-cover"
+                      className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                       sizes="(max-width: 768px) 100vw, 310px"
                     />
                   </div>
+                  <div className="absolute inset-0 transition-opacity duration-300 bg-black opacity-0 group-hover:opacity-20" />
                 </div>
               </div>
             </div>
@@ -153,9 +159,9 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ header, descript
 
       {/* Image Preview Modal */}
       {selectedImageIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-[#a8382d] flex items-center justify-center">
+        <div className="fixed inset-0 z-50 bg-[#a8382d] flex items-center justify-center animate-fadeIn">
           {/* Desktop/Tablet/Mobile Container */}
-          <div className="relative w-[390px] h-[844px] md:w-[810px] md:h-[1080px] lg:w-[1200px] lg:h-[800px]">
+          <div className="relative w-[390px] h-[844px] md:w-[810px] md:h-[1080px] lg:w-[1200px] lg:h-[800px] animate-scaleIn">
             {/* Header */}
             <div className="absolute top-[40px] left-[24px] md:left-[40px] lg:left-[40px] right-[24px] md:right-[40px] lg:right-[40px] flex items-center justify-between">
               {/* Pagination */}
@@ -168,7 +174,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ header, descript
               {/* Close Button */}
               <button 
                 onClick={closeModal}
-                className="w-[32px] h-[32px] flex items-center justify-center"
+                className="w-[32px] h-[32px] flex items-center justify-center hover:scale-110 hover:rotate-90 transition-all duration-200"
                 aria-label="Close"
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -195,7 +201,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ header, descript
               {/* Previous Button */}
               <button 
                 onClick={goToPrevious}
-                className="w-[32px] h-[32px] flex items-center justify-center"
+                className="w-[32px] h-[32px] flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 aria-label="Previous image"
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -211,7 +217,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ header, descript
               {/* Next Button */}
               <button 
                 onClick={goToNext}
-                className="w-[32px] h-[32px] flex items-center justify-center"
+                className="w-[32px] h-[32px] flex items-center justify-center hover:scale-110 transition-transform duration-200"
                 aria-label="Next image"
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
