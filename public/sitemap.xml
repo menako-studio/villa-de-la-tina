@@ -3,43 +3,49 @@
   <!-- Main Pages -->
   <url>
     <loc>https://villadelatina.com/</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://villadelatina.com/tentang-kami</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villadelatina.com/event-venue</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://villadelatina.com/tina-wiryawati-center</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://villadelatina.com/tina-wiryawati-center/blog</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villadelatina.com/event-venue/pelatihan-sabun-rumah-tangga</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villadelatina.com/event-venue/workshop-kerajinan-tangan</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villadelatina.com/event-venue/gathering-komunitas-umkm</loc>
-    <lastmod>2026-02-01</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

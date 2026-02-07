@@ -52,6 +52,44 @@ const BlogPage: NextPage = () => {
       <Head>
         <title>Jejak Aktivitas - Tina Wiryawati Center | Villa de La Tina</title>
         <meta name="description" content="Catatan kegiatan, pertemuan, dan proses yang dijalani bersama masyarakat yang dirangkum sebagai bagian dari perjalanan yang terus bertumbuh." />
+        <meta name="keywords" content="blog tina wiryawati center, jejak aktivitas, kegiatan masyarakat kuningan, program twc, cerita pemberdayaan, umkm kuningan" />
+        <meta name="author" content="Tina Wiryawati Center" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://villadelatina.com/tina-wiryawati-center/blog" />
+        <meta property="og:title" content="Jejak Aktivitas - Tina Wiryawati Center" />
+        <meta property="og:description" content="Catatan kegiatan, pertemuan, dan proses yang dijalani bersama masyarakat di Kuningan." />
+        <meta property="og:image" content="https://villadelatina.com/images/twc-blog-og.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://villadelatina.com/tina-wiryawati-center/blog" />
+        <meta property="twitter:title" content="Jejak Aktivitas - Tina Wiryawati Center" />
+        <meta property="twitter:description" content="Catatan kegiatan, pertemuan, dan proses yang dijalani bersama masyarakat di Kuningan." />
+        <meta property="twitter:image" content="https://villadelatina.com/images/twc-blog-og.jpg" />
+        
+        <link rel="canonical" href="https://villadelatina.com/tina-wiryawati-center/blog" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Jejak Aktivitas - Tina Wiryawati Center",
+              "description": "Catatan kegiatan, pertemuan, dan proses yang dijalani bersama masyarakat yang dirangkum sebagai bagian dari perjalanan yang terus bertumbuh",
+              "url": "https://villadelatina.com/tina-wiryawati-center/blog",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "Villa De La Tina",
+                "url": "https://villadelatina.com"
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className="bg-[#f9f6f1] w-full">

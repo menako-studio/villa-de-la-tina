@@ -27,6 +27,7 @@ const staticPages = [
   { loc: '/tentang-kami', priority: '0.8', changefreq: 'monthly' },
   { loc: '/event-venue', priority: '0.9', changefreq: 'weekly' },
   { loc: '/tina-wiryawati-center', priority: '0.9', changefreq: 'monthly' },
+  { loc: '/tina-wiryawati-center/blog', priority: '0.8', changefreq: 'weekly' },
 ];
 
 // Generate event detail pages
