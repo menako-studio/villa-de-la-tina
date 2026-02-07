@@ -5,7 +5,7 @@ export default function FinalCTA() {
   return (
     <section className="bg-[#a8382d] h-auto md:h-[480px] lg:h-[608px] flex flex-col md:flex-row items-center md:items-center justify-center md:justify-end p-6 md:p-10 lg:p-20 overflow-hidden relative gap-10 md:gap-10 lg:gap-0">
       {/* Background Image */}
-      <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 h-[400px] md:h-[400px] lg:h-[448px] w-full md:w-[445px] lg:w-[600px] overflow-hidden order-1 md:order-none">
+      <div className="relative md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2 h-[400px] md:h-[400px] lg:h-[448px] w-full md:w-[445px] lg:w-[900px] overflow-hidden order-1 md:order-none">
         <Image
           src="/images/cta-low.webp"
           alt="Begin Your Stay"

@@ -70,14 +70,14 @@ export const CTASection: React.FC<CTASectionProps> = ({ title, description, butt
         <div className="absolute bg-[#a8382d] h-full right-0 top-0 w-[calc(100%-40px)] lg:w-[calc(100%-80px)]" />
 
         {/* Image - Tablet/Desktop */}
-        <div className="absolute h-[448px] left-0 overflow-hidden top-[40px] w-[400px] lg:w-[600px] lg:top-[80px]">
+        <div className="absolute h-[448px] left-0 overflow-hidden top-[40px] w-[400px] lg:w-[900px] lg:top-[80px]">
           <div className="relative w-full h-full">
             <Image
               src={image}
               alt={title}
               fill
               className="object-cover"
-              sizes="(max-width: 1279px) 400px, 600px"
+              sizes="(max-width: 1279px) 400px, 900px"
             />
           </div>
         </div>
