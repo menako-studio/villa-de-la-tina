@@ -376,7 +376,7 @@ export default function EventDetailPage({ event, relatedEvents }: EventDetailPag
         )}
       </main>
 
-      <Footer />
+      
     </>
   );
 }

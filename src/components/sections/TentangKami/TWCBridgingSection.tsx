@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { TYPOGRAPHY, LAYOUTS } from './constants';
 
 /**
@@ -61,9 +62,12 @@ export function TWCBridgingSection() {
               Bukan sebagai pencapaian, melainkan sebagai pengingat bahwa setiap langkah selalu dimulai dari kehadiran.
             </p>
           </div>
-          <button disabled className="bg-[#999999] flex gap-2 items-center justify-center px-5 py-3 text-white font-medium text-base cursor-not-allowed opacity-60 w-fit">
-            Segera Hadir
-          </button>
+          <Link href="/tina-wiryawati-center" className="bg-[#d95143] hover:bg-[#c24537] transition-colors flex gap-2 items-center justify-center px-5 py-3 text-white font-medium text-base w-full md:w-fit">
+            <span>Jelajahi Tina Wiryawati Center</span>
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+              <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
         </div>
       </div>
     </section>

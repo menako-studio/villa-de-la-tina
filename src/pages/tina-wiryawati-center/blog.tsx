@@ -48,7 +48,7 @@ const BlogPage: NextPage = () => {
   };
 
   return (
-    <RootLayout>
+    <>
       <Head>
         <title>Jejak Aktivitas - Tina Wiryawati Center | Villa de La Tina</title>
         <meta name="description" content="Catatan kegiatan, pertemuan, dan proses yang dijalani bersama masyarakat yang dirangkum sebagai bagian dari perjalanan yang terus bertumbuh." />
@@ -139,7 +139,7 @@ const BlogPage: NextPage = () => {
           </div>
         </section>
       </main>
-    </RootLayout>
+    </>
   );
 };
 
