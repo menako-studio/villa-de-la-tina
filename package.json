@@ -1,6 +1,6 @@
 {
   "name": "villa-de-la-tina",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,13 @@
     "test:pre-commit": "npm run lint && npm run type-check",
     "test:pre-push": "npm run build",
     "prepare": "husky",
-    "firebase:deploy": "firebase deploy"
+    "firebase:deploy": "firebase deploy",
+    "version:patch": "node scripts/version.js patch",
+    "version:minor": "node scripts/version.js minor",
+    "version:major": "node scripts/version.js major",
+    "release": "npm run version:patch && git push origin main --follow-tags",
+    "release:minor": "npm run version:minor && git push origin main --follow-tags",
+    "release:major": "npm run version:major && git push origin main --follow-tags"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
