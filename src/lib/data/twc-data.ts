@@ -47,7 +47,7 @@ export const faqData: FAQItem[] = [
   }
 ];
 
-export const blogCategories = ['Pelatihan', 'Healthy', 'Travel', 'Food', 'Lifestyle', 'Innovate'];
+export const blogCategories = ['Pelatihan', 'Innovate'];
 
 export const blogPosts: BlogPost[] = [
   {
@@ -79,6 +79,106 @@ export const blogPosts: BlogPost[] = [
     image: '/images/tina-wiryawati-center/blog-twc.webp',
     size: 'small',
     url: 'https://www.republika.id/posts/53104/hj-tina-wiryawati-gencar-berdayakan-ekonomi-keluarga'
+  },
+  {
+    id: 4,
+    title: 'Hj Tina Wiryawati Gelar Pelatihan Keterampilan untuk Pemberdayaan Perempuan di Kuningan',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '28 Jan, 2025',
+    image: '/images/tina-wiryawati-center/blog-pelatihan-perempuan.webp',
+    size: 'medium',
+    url: 'https://gerindra.id/2025/01/28/hj-tina-wiryawati-gelar-pelatihan-keterampilan-untuk-pemberdayaan-perempuan-di-kuningan/'
+  },
+  {
+    id: 5,
+    title: 'Lahir Dari Pelatihan Barista Tina Wiryawati Center, Pemuda Asal Banjar Sukses Jalankan Usaha',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '21 Feb, 2023',
+    image: '/images/tina-wiryawati-center/blog-barista-banjar.webp',
+    size: 'small',
+    url: 'https://kuninganonline.com/lahir-dari-pelatihan-barista-tina-wiryawati-center-pemuda-asal-banjar-sukses-jalankan-usaha/'
+  },
+  {
+    id: 6,
+    title: 'Tina Wiryawati Berdayakan Kelompok Wanita Tani dengan Pelatihan Pembuatan Pasta Gigi Capai Kemandirian Masyarakat',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '26 May, 2024',
+    image: '/images/tina-wiryawati-center/blog-pasta-gigi.webp',
+    size: 'medium',
+    url: 'https://gerindra.id/2024/05/26/tina-wiryawati-berdayakan-kelompok-wanita-tani-dengan-pelatihan-pembuatan-pasta-gigi-capai-kemandirian-masyarakat/'
+  },
+  {
+    id: 7,
+    title: 'Tina Wiryawati Dorong Peningkatan Ekonomi Keluarga Melalui Pelatihan MUA',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '15 May, 2024',
+    image: '/images/tina-wiryawati-center/blog-pelatihan-mua.webp',
+    size: 'small',
+    url: 'https://asajabar.com/tina-wiryawati-dorong-peningkatan-ekonomi-keluarga-melalui-pelatihan-mua/'
+  },
+  {
+    id: 8,
+    title: 'Gelar Reses Hj Tina Wiryawati Fasilitasi Pelatihan dan Pengobatan untuk Masyarakat',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '7 Mar, 2025',
+    image: '/images/tina-wiryawati-center/blog-reses-pelatihan.webp',
+    size: 'large',
+    url: 'https://gerindra.id/2025/03/07/gelar-reses-hj-tina-wiryawati-fasilitasi-pelatihan-dan-pengobatan-untuk-masyarakat/'
+  },
+  {
+    id: 9,
+    title: 'Inisiatif Ekonomi Kreatif Jawa Barat Tina Wiryawati Perluas Akses Modal dan Pelatihan Kopi',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '12 Jun, 2024',
+    image: '/images/tina-wiryawati-center/blog-pelatihan-kopi.webp',
+    size: 'medium',
+    url: 'https://jabar.tribunnews.com/adikarya-parlemen/1155584/inisiatif-ekonomi-kreatif-jawa-barat-tina-wiryawati-perluas-akses-modal-dan-pelatihan-kopi'
+  },
+  {
+    id: 10,
+    title: 'Momen HUT Gerindra Tina Wiryawati Latih Emak-emak Bikin Produk Pelembab Alami di Kuningan',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '3 Feb, 2025',
+    image: '/images/tina-wiryawati-center/blog-pelembab-kuningan.webp',
+    size: 'small',
+    url: 'https://kuningan.inews.id/read/552107/momen-hut-gerindra-tina-wiryawati-latih-emak-emak-bikin-produk-pelembab-alami-di-kuningan'
+  },
+  {
+    id: 11,
+    title: 'Tina Wiryawati: Aplikasi Nyari Gawe Perlu Didukung dengan Data Valid dan Akses Pelatihan Merata',
+    category: 'Innovate',
+    author: 'TWC Team',
+    date: '17 Oct, 2025',
+    image: '/images/tina-wiryawati-center/blog-nyari-gawe.webp',
+    size: 'medium',
+    url: 'https://secondnewsupdate.co.id/tina-wiryawati-aplikasi-nyari-gawe-perlu-didukung-dengan-data-valid-dan-akses-pelatihan-merata/'
+  },
+  {
+    id: 12,
+    title: 'Roadshow Reses di Ciamis Tina Wiryawati Gelar Pelatihan Pemberdayaan Ekonomi Perempuan',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '8 Mar, 2024',
+    image: '/images/tina-wiryawati-center/blog-reses-ciamis.webp',
+    size: 'small',
+    url: 'https://ciamis.pikiran-rakyat.com/ciamis/pr-509136590/roadshow-reses-di-ciamis-tina-wiryawati-gelar-pelatihan-pemberdayaan-ekonomi-perempuan'
+  },
+  {
+    id: 13,
+    title: 'Anggota DPRD Jabar Tina Wiryawati Gelar Pelatihan Pembuatan Minyak Telon di Kota Banjar',
+    category: 'Pelatihan',
+    author: 'TWC Team',
+    date: '18 Apr, 2024',
+    image: '/images/tina-wiryawati-center/blog-minyak-telon.webp',
+    size: 'medium',
+    url: 'https://asajabar.com/anggota-dprd-jabar-tina-wiryawati-gelar-pelatihan-pembuatan-minyak-telon-di-kota-banjar/'
   },
 ];
 
