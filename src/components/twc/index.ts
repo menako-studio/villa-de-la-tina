@@ -19,5 +19,6 @@ export { IntroSection } from './sections/IntroSection';
 export { ProgramSection } from './sections/ProgramSection';
 export { BlogSection } from './sections/BlogSection';
 export { GallerySection } from './sections/GallerySection';
+export { BridgingSection } from './sections/BridgingSection';
 export { FAQSection } from './sections/FAQSection';
 export { FinalCTASection } from './sections/FinalCTASection';

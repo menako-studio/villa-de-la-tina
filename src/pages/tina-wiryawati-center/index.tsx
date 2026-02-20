@@ -6,6 +6,7 @@ import {
   ProgramSection,
   BlogSection,
   GallerySection,
+  BridgingSection,
   FAQSection,
   FinalCTASection
 } from '@/components/twc';
@@ -74,6 +75,7 @@ export default function TinaWiryawatiCenter() {
       <ProgramSection />
       <BlogSection />
       <GallerySection />
+      <BridgingSection />
       <FAQSection />
       <FinalCTASection />
 

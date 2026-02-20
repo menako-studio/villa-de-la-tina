@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import RootLayout from '@/layouts/RootLayout';
 import { blogCategories, blogPosts } from '@/lib/data/twc-data';
 import { 
   FeaturedBlogPost, 
