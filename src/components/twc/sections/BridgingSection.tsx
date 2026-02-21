@@ -60,7 +60,7 @@ export const BridgingSection: React.FC = () => {
               href={socialLinks[0].url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 hover:bg-white hover:text-[#a8382d] transition-colors duration-200"
+              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 text-white hover:bg-white hover:text-[#a8382d] transition-colors duration-200"
             >
               <Instagram className="w-5 h-5" />
               <span className="font-medium text-base leading-6 tracking-[-0.5px]">
@@ -73,7 +73,7 @@ export const BridgingSection: React.FC = () => {
               href={socialLinks[1].url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 hover:bg-white hover:text-[#a8382d] transition-colors duration-200"
+              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 text-white hover:bg-white hover:text-[#a8382d] transition-colors duration-200"
             >
               <Facebook className="w-5 h-5" />
               <span className="font-medium text-base leading-6 tracking-[-0.5px]">
@@ -86,7 +86,7 @@ export const BridgingSection: React.FC = () => {
               href={socialLinks[2].url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 hover:bg-white hover:text-[#a8382d] transition-colors duration-200 col-span-2 lg:col-span-1"
+              className="border-[1.5px] border-white flex items-center justify-center gap-1.5 px-5 py-3 text-white hover:bg-white hover:text-[#a8382d] transition-colors duration-200 col-span-2 lg:col-span-1"
             >
               <svg
                 className="w-5 h-5"
