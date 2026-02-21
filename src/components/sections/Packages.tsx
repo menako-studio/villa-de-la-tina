@@ -4,7 +4,7 @@ import CTACard from '../cards/CTACard';
 
 const packages = [
   {
-    image: '/images/private-healing-stay.webp',
+    image: '/images/private-stay.webp',
     alt: 'Private Healing Stay',
     title: 'Private Healing Stay',
     description: 'Sebuah pengalaman menginap yang tenang dan personal, memberi ruang bagi tubuh dan pikiran untuk beristirahat tanpa gangguan. Dirancang bagi mereka yang mencari keheningan, privasi, dan jeda yang utuh.',
