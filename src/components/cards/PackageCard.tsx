@@ -29,7 +29,7 @@ export default function PackageCard({
           loading="lazy"
         />
       </div>
-      <div className={`${backgroundColor} w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-40 justify-center ${reversed ? 'lg:order-1' : ''}`} style={{ height: 'fit-content' }}>
+      <div className={`${backgroundColor} w-full lg:w-[340px] p-6 lg:p-10 flex flex-col gap-6 lg:gap-8 justify-center ${reversed ? 'lg:order-1' : ''}`}>
         <h3 className="font-['Young_Serif'] font-medium text-[20px] leading-[30px] lg:text-[24px] lg:leading-[36px] tracking-[-0.4px] text-[#d95143]">
           {title}
         </h3>
