@@ -9,6 +9,7 @@ import {
   FAQSection,
   faqItems,
 } from '@/components/sections/TentangKami';
+import { BridgingSection } from '@/components/twc';
 
 /**
  * Tentang Kami Page
@@ -78,6 +79,7 @@ export default function TentangKami() {
         <UntoldStorySection />
         <BrandNarrativeSection />
         <TWCBridgingSection />
+        <BridgingSection />
         <FAQSection items={faqItems} openFaq={openFaq} onToggle={handleFaqToggle} />
         <FinalCTA />
       </main>
